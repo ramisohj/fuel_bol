@@ -1,0 +1,24 @@
+{
+	"decCodigo": 1,
+	"strMensaje": "OK",
+	"oResultado": [
+		{
+			"saldo_octano": -4886.414,
+			"saldo_bsa": 133.369,
+			"saldo_planta": 19751.07,
+			"id_producto_bsa": 7,
+			"id_producto_hydro": 383,
+			"id_eess": 2543,
+			"id_entidad": 7817
+		},
+		{
+			"saldo_octano": 0.0,
+			"saldo_bsa": 0.0,
+			"saldo_planta": 0.0,
+			"id_producto_bsa": 3,
+			"id_producto_hydro": 126,
+			"id_eess": 2543,
+			"id_entidad": 7817
+		}
+	]
+}

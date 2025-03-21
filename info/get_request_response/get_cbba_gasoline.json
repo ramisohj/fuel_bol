@@ -1,0 +1,1941 @@
+{
+	"decCodigo": 1,
+	"strMensaje": "OK",
+	"oResultado": [
+		{
+			"id_eess_saldo": 2825,
+			"id_entidad": 616,
+			"latitud": -18.2168464,
+			"longitud": -65.191346,
+			"nombreEstacion": "ESTACION DE SERVICIO AIQUILE",
+			"direccion": "AV.: BOLIVAR Nro S/N ZONA : VILLA GUADALUPE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2306,
+			"id_entidad": 730,
+			"latitud": -17.3651061,
+			"longitud": -66.1602441,
+			"nombreEstacion": "ESTACION DE SERVICIO URKUPIÑA I",
+			"direccion": "COCHABAMBA AV. CIRCUNVALACION - ESQUINA FRANCISCO BEDREGAL",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2643,
+			"id_entidad": 961,
+			"latitud": -17.3959165,
+			"longitud": -66.3202457,
+			"nombreEstacion": "DISEL S.R.L. SUCURSAL 1",
+			"direccion": "AVENIDA ALBINA PATIÑO S/N ZONA PURGATORIO - COCHABAMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2306,
+			"id_entidad": 730,
+			"latitud": -17.3651061,
+			"longitud": -66.1602441,
+			"nombreEstacion": "ESTACION DE SERVICIO URKUPIÑA I",
+			"direccion": "COCHABAMBA AV. CIRCUNVALACION - ESQUINA FRANCISCO BEDREGAL",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2991,
+			"id_entidad": 4971,
+			"latitud": -17.3715955,
+			"longitud": -66.1732204,
+			"nombreEstacion": "AMERICA",
+			"direccion": "AV. AMERICA ESQ. CALLE PACHAMAMA ZONA CALA CALA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3171,
+			"id_entidad": 47747,
+			"latitud": -17.6036075,
+			"longitud": -66.0328372,
+			"nombreEstacion": "ESTACION DE SERVICIO PAPU S.R.L.",
+			"direccion": "AVENIDA LOS LIBERTADORES Nro S/N, ZONA LADERA LOTE Nro 30 MANZANO D",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2989,
+			"id_entidad": 4972,
+			"latitud": -17.4454226,
+			"longitud": -66.1371125,
+			"nombreEstacion": "VALLE HERMOSO",
+			"direccion": "AV. PETROLERA KM 5 1/2 ZONA VALLE HERMOSO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2909,
+			"id_entidad": 4974,
+			"latitud": -16.976194,
+			"longitud": -65.4220908,
+			"nombreEstacion": "VILLA TUNARI",
+			"direccion": "VILLA TUNARI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2991,
+			"id_entidad": 4971,
+			"latitud": -17.3715955,
+			"longitud": -66.1732204,
+			"nombreEstacion": "AMERICA",
+			"direccion": "AV. AMERICA ESQ. CALLE PACHAMAMA ZONA CALA CALA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2615,
+			"id_entidad": 1968,
+			"latitud": -17.3575562,
+			"longitud": -66.183896,
+			"nombreEstacion": "EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L. SUC I",
+			"direccion": "AV. SIMON LOPEZ # 1930",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2600,
+			"id_entidad": 7895,
+			"latitud": -17.3920059,
+			"longitud": -66.2648048,
+			"nombreEstacion": "ESTACION DE SERVICIO IQUIRCOLLO S.R.L.",
+			"direccion": "COCHABAMBA-AV. BLANCO GALINDO KM 11 1/2 NRO S/N  UV: S/N MZNO: S/N ZONA: IQUIRCOLLO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3095,
+			"id_entidad": 22746,
+			"latitud": -17.3917272,
+			"longitud": -66.2510492,
+			"nombreEstacion": "ESTACION DE SERVICIO PARAJE 24.7 S.R.L.",
+			"direccion": "COCHABAMBA - AV. BLANCO GALINDO KM. 10  Nro S/N  ZONA: PIÑAMI SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2598,
+			"id_entidad": 1969,
+			"latitud": -17.3809691,
+			"longitud": -66.1422762,
+			"nombreEstacion": "EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L. SUC II",
+			"direccion": "AV. JUAN DE LA CRUZ TORRES # 1005",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2786,
+			"id_entidad": 1886,
+			"latitud": -17.3681063,
+			"longitud": -66.1797599,
+			"nombreEstacion": "ESTACION DE SERVICIO COCHABAMBA S.R.L. SUCURSAL I",
+			"direccion": "AV.  CIRCUNVALACION BEIJING  ENTRE CALLES RIGOBERTO SAENZ Y F.SUAREZ",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2786,
+			"id_entidad": 1886,
+			"latitud": -17.3681063,
+			"longitud": -66.1797599,
+			"nombreEstacion": "ESTACION DE SERVICIO COCHABAMBA S.R.L. SUCURSAL I",
+			"direccion": "AV.  CIRCUNVALACION BEIJING  ENTRE CALLES RIGOBERTO SAENZ Y F.SUAREZ",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2989,
+			"id_entidad": 4972,
+			"latitud": -17.4454226,
+			"longitud": -66.1371125,
+			"nombreEstacion": "VALLE HERMOSO",
+			"direccion": "AV. PETROLERA KM 5 1/2 ZONA VALLE HERMOSO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2709,
+			"id_entidad": 2118,
+			"latitud": -17.4063164,
+			"longitud": -66.0063713,
+			"nombreEstacion": "ESTACION DE SERVICIO TRANS SACABA S.A.II",
+			"direccion": "CARRETERA NUEVA A SANTA CRUZ KM.18 1/2",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2905,
+			"id_entidad": 4970,
+			"latitud": -17.3653391,
+			"longitud": -66.173376,
+			"nombreEstacion": "CALA CALA",
+			"direccion": "AV. SIMON LOPEZ ENTRE M. PEREZ DE OLGUIN Y G. R. MORENO ZONA CALA CALA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3115,
+			"id_entidad": 8178,
+			"latitud": -17.5417215,
+			"longitud": -66.0594992,
+			"nombreEstacion": "ESTACION DE SERVICIO DAYANA",
+			"direccion": "TOLATA CARRETERA ANTIGUA STA CRUZ KM 20,5 NroS/N ZONA CARCAJE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3055,
+			"id_entidad": 7934,
+			"latitud": -17.3897927,
+			"longitud": -66.1834935,
+			"nombreEstacion": "ESTACION DE SERVICIO BEIJING",
+			"direccion": "AVENIDA  BEIJING ESQUINA CALLE  23 DE MARZO NRO S/N  DE LA ZONA VILLA BUCHS NORTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3063,
+			"id_entidad": 11243,
+			"latitud": -17.338446,
+			"longitud": -66.222632,
+			"nombreEstacion": "FORTALEZA ENERGY S.R.L.",
+			"direccion": "TIQUIPAYA - CALLE COCHABAMBA NRO 742 ZONA:CENTRAL",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3055,
+			"id_entidad": 7934,
+			"latitud": -17.3897927,
+			"longitud": -66.1834935,
+			"nombreEstacion": "ESTACION DE SERVICIO BEIJING",
+			"direccion": "AVENIDA  BEIJING ESQUINA CALLE  23 DE MARZO NRO S/N  DE LA ZONA VILLA BUCHS NORTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2598,
+			"id_entidad": 1969,
+			"latitud": -17.3809691,
+			"longitud": -66.1422762,
+			"nombreEstacion": "EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L. SUC II",
+			"direccion": "AV. JUAN DE LA CRUZ TORRES # 1005",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2941,
+			"id_entidad": 8039,
+			"latitud": -17.5680744,
+			"longitud": -65.9352525,
+			"nombreEstacion": "ESTACION DE SERVICIO ADRIAN",
+			"direccion": "AV. MONS. WALTER ROSALES CLIZA S/N ZONA CLIZA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2615,
+			"id_entidad": 1968,
+			"latitud": -17.3575562,
+			"longitud": -66.183896,
+			"nombreEstacion": "EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L. SUC I",
+			"direccion": "AV. SIMON LOPEZ # 1930",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2307,
+			"id_entidad": 7761,
+			"latitud": -17.4252143,
+			"longitud": -66.1330358,
+			"nombreEstacion": "ESTACION DE SERVICIO SEÑOR SANTIAGO",
+			"direccion": "COCHABAMBA - AV. SIGLO XX NRO 326 ZONA SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2291,
+			"id_entidad": 7785,
+			"latitud": -17.3915712,
+			"longitud": -66.2155809,
+			"nombreEstacion": "ESTACION DE SERVICIO URKUPIÑA",
+			"direccion": "COCHABAMBA AV. BLANCO GALINDO KM. 6 1/2 (COLCAPIRHUA)",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3032,
+			"id_entidad": 7821,
+			"latitud": -17.3942972,
+			"longitud": -66.2904333,
+			"nombreEstacion": "ESTACION DE SERVICIO SAN JORGE CBBA. S.R.L.",
+			"direccion": "AVENIDA BLANCO GALINDO KM. 14 1/2 BARRIO MANACO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2291,
+			"id_entidad": 7785,
+			"latitud": -17.3915712,
+			"longitud": -66.2155809,
+			"nombreEstacion": "ESTACION DE SERVICIO URKUPIÑA",
+			"direccion": "COCHABAMBA AV. BLANCO GALINDO KM. 6 1/2 (COLCAPIRHUA)",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2657,
+			"id_entidad": 7804,
+			"latitud": -17.3795766,
+			"longitud": -66.1657508,
+			"nombreEstacion": "SURTIDOR EL CRISTO",
+			"direccion": "AVENIDA JUAN DE LA ROSA NRO 121",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2543,
+			"id_entidad": 7817,
+			"latitud": -17.4067161,
+			"longitud": -66.1449663,
+			"nombreEstacion": "ESTACION DE SERVICIO CIRCUITO BOLIVIA S.A.",
+			"direccion": "AVENIDA 6 DE AGOSTO ESQUINA CIRCUITO BOLIVIA  S/N FRENTE A  LAGUNA ALALY PLENA ESQUINA DE LA ZONA CERRO VERDE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2905,
+			"id_entidad": 4970,
+			"latitud": -17.3653391,
+			"longitud": -66.173376,
+			"nombreEstacion": "CALA CALA",
+			"direccion": "AV. SIMON LOPEZ ENTRE M. PEREZ DE OLGUIN Y G. R. MORENO ZONA CALA CALA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3043,
+			"id_entidad": 8013,
+			"latitud": -17.5684056,
+			"longitud": -65.776293,
+			"nombreEstacion": "ESTACION DE SERVICIO ARANI",
+			"direccion": "AV. INGAVI S/N ZONA ARANI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2663,
+			"id_entidad": 7677,
+			"latitud": -17.4161668,
+			"longitud": -66.0612373,
+			"nombreEstacion": "COMERCIALIZADORA \"QK\" S.R.L.",
+			"direccion": "COCHABAMBA- AVENIDA. VILLAZON KM 11.1/2 NRO S/N EDIFICIO SURTIDOR \"QK\" ZONA:GUADALUPE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2543,
+			"id_entidad": 7817,
+			"latitud": -17.4067161,
+			"longitud": -66.1449663,
+			"nombreEstacion": "ESTACION DE SERVICIO CIRCUITO BOLIVIA S.A.",
+			"direccion": "AVENIDA 6 DE AGOSTO ESQUINA CIRCUITO BOLIVIA  S/N FRENTE A  LAGUNA ALALY PLENA ESQUINA DE LA ZONA CERRO VERDE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2297,
+			"id_entidad": 8071,
+			"latitud": -17.3636363,
+			"longitud": -66.2295043,
+			"nombreEstacion": "ESTACION DE SERVICIO MAX MAMANGUEÑO",
+			"direccion": "AV. REDUCTO S/N ZONA CUATRO ESQUINAS",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2867,
+			"id_entidad": 8017,
+			"latitud": -17.5318928,
+			"longitud": -65.9707382,
+			"nombreEstacion": "ESTACION DE SERVICIO ARISPE",
+			"direccion": "COCHABAMBA - CARRETERA A SANTA CRUZ NRO S/N ZONA: TOLATA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2409,
+			"id_entidad": 7903,
+			"latitud": -17.3917709,
+			"longitud": -66.2087413,
+			"nombreEstacion": "ESTACION DE SERVICIO LAS ISLAS",
+			"direccion": "AVENIDA BLANCO GALINDO KM 5 1/2 ESQUINA SEXTA S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2950,
+			"id_entidad": 7826,
+			"latitud": -17.9391951,
+			"longitud": -65.3369617,
+			"nombreEstacion": "ESTACION DE SERVICIO MIZQUE",
+			"direccion": "CARRETERA  A MIZQUE AIQUILE   NRO S/N  ZONA KONCHUPATA PROVINCIA MIZQUE  ESTA SOBRE LA CARRETERA.",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2950,
+			"id_entidad": 7826,
+			"latitud": -17.9391951,
+			"longitud": -65.3369617,
+			"nombreEstacion": "ESTACION DE SERVICIO MIZQUE",
+			"direccion": "CARRETERA  A MIZQUE AIQUILE   NRO S/N  ZONA KONCHUPATA PROVINCIA MIZQUE  ESTA SOBRE LA CARRETERA.",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2856,
+			"id_entidad": 8052,
+			"latitud": -17.4336921,
+			"longitud": -65.722615,
+			"nombreEstacion": "ESTACION DE SERVICIO TIRAQUE",
+			"direccion": "COCHABAMBA AV SANTA CRUZ NRO S/N ZONA TIRAQUE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2697,
+			"id_entidad": 7916,
+			"latitud": -17.4000347,
+			"longitud": -66.0437716,
+			"nombreEstacion": "ESTACION DE SERVICIO CHIMBOCO",
+			"direccion": "AV. BARRIENTOS S/N KM 14.5 ZONA CHIMBOCO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3115,
+			"id_entidad": 8178,
+			"latitud": -17.5417215,
+			"longitud": -66.0594992,
+			"nombreEstacion": "ESTACION DE SERVICIO DAYANA",
+			"direccion": "TOLATA CARRETERA ANTIGUA STA CRUZ KM 20,5 NroS/N ZONA CARCAJE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 4026,
+			"id_entidad": 7797,
+			"latitud": -16.9969531,
+			"longitud": -65.1487478,
+			"nombreEstacion": "ESTACION DE SERVICIO TRUJILLO ORELLANA",
+			"direccion": "AVENIDA  PANAMERICANA NRO S/N  ZONA CENTRAL CHIMORE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2656,
+			"id_entidad": 7819,
+			"latitud": -17.4427554,
+			"longitud": -66.337881,
+			"nombreEstacion": "ESTACION DE SERVICIOS SIPE SIPE S.R.L.",
+			"direccion": "ZONA MONTENEGRO,CARRETERA COCHABAMBA ORURO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2489,
+			"id_entidad": 7811,
+			"latitud": -17.3702159,
+			"longitud": -66.1426161,
+			"nombreEstacion": "ESTACION DE SERVICIO ARANJUEZ",
+			"direccion": "AV. GENERAL GALINDO NRO 1472",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3032,
+			"id_entidad": 7821,
+			"latitud": -17.3942972,
+			"longitud": -66.2904333,
+			"nombreEstacion": "ESTACION DE SERVICIO SAN JORGE CBBA. S.R.L.",
+			"direccion": "AVENIDA BLANCO GALINDO KM. 14 1/2 BARRIO MANACO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2578,
+			"id_entidad": 7840,
+			"latitud": -17.405131,
+			"longitud": -66.1797237,
+			"nombreEstacion": "PETROGAS SERVICIOS PETROLEROS S.R.L.",
+			"direccion": "COCHABAMBA- AV. INGAVI ESQUINA DANIEL CAMPOS NRO S/N ZONA: CHIMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2916,
+			"id_entidad": 7909,
+			"latitud": -17.468408,
+			"longitud": -66.3390364,
+			"nombreEstacion": "ESTACION DE SERVICIO SUTICOLLO",
+			"direccion": "COCHABAMBA - KM 26 CARRETERA CONFITAL NRO S/N ZONA: SUTICOLLO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2679,
+			"id_entidad": 7836,
+			"latitud": -17.3926172,
+			"longitud": -66.2686856,
+			"nombreEstacion": "DISEL S.R.L.",
+			"direccion": "AVENIDA BLANCO GALINDO K.M. 12.5 NRO S/N - ZONA IQUIRCOLLO - COCHABAMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2679,
+			"id_entidad": 7836,
+			"latitud": -17.3926172,
+			"longitud": -66.2686856,
+			"nombreEstacion": "DISEL S.R.L.",
+			"direccion": "AVENIDA BLANCO GALINDO K.M. 12.5 NRO S/N - ZONA IQUIRCOLLO - COCHABAMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2308,
+			"id_entidad": 7712,
+			"latitud": -17.4450822,
+			"longitud": -66.1379925,
+			"nombreEstacion": "ESTACION DE SERVICIO RIOJA",
+			"direccion": "AV. PETROLERA KM 4.5",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2555,
+			"id_entidad": 7812,
+			"latitud": -17.412664,
+			"longitud": -66.1550514,
+			"nombreEstacion": "EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L.",
+			"direccion": "AV. 6 DE AGOSTO # 159",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3124,
+			"id_entidad": 30064,
+			"latitud": -17.4311736,
+			"longitud": -66.1501086,
+			"nombreEstacion": "ESTACION DE SERVICIO TICTI S.R.L.",
+			"direccion": "COCHABAMBA - AV. PETROLERA KM. 2 NRO S/N MZNO: 005 ZONA: TICTI SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2489,
+			"id_entidad": 7811,
+			"latitud": -17.3702159,
+			"longitud": -66.1426161,
+			"nombreEstacion": "ESTACION DE SERVICIO ARANJUEZ",
+			"direccion": "AV. GENERAL GALINDO NRO 1472",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2295,
+			"id_entidad": 39464,
+			"latitud": -17.3602861,
+			"longitud": -66.1726928,
+			"nombreEstacion": "ESTACION DE SERVICIO SEÑOR SANTIAGO SUCURSAL 1",
+			"direccion": "AV. MELCHOR PEREZ DE OLGUIN ESQ. AV. CIRCUNVALACION",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2416,
+			"id_entidad": 7725,
+			"latitud": -17.4195787,
+			"longitud": -66.1521789,
+			"nombreEstacion": "SURTIDOR NISSAN",
+			"direccion": "COCHABAMBA - AV. PETROLERA KM 1 NRO S/N ZONA: SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2753,
+			"id_entidad": 7891,
+			"latitud": -16.9963069,
+			"longitud": -65.1609241,
+			"nombreEstacion": "ESTACION DE SERVICIO CHIMORE",
+			"direccion": "CARRETERA NUEVA COCHABAMBA - STA CRUZ KM 198 LOCALIDAD CHIMORE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2763,
+			"id_entidad": 7843,
+			"latitud": -17.7248618,
+			"longitud": -66.2760272,
+			"nombreEstacion": "ESTACION DE SERVICIO 24 DE SEPTIEMBRE S.R.L.",
+			"direccion": "COCHABAMBA - AV. COBOCE -EL TAMBO-CAMINO IRPA IRPA NRO S/N ZONA: EL TAMBO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2877,
+			"id_entidad": 7892,
+			"latitud": -17.3861457,
+			"longitud": -66.1001319,
+			"nombreEstacion": "ESTACION DE SERVICIO ANITA",
+			"direccion": "AVENIDA ELIODORO VILLAZON NRO. 5824 ZONA PUNTITI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2763,
+			"id_entidad": 7843,
+			"latitud": -17.7248618,
+			"longitud": -66.2760272,
+			"nombreEstacion": "ESTACION DE SERVICIO 24 DE SEPTIEMBRE S.R.L.",
+			"direccion": "COCHABAMBA - AV. COBOCE -EL TAMBO-CAMINO IRPA IRPA NRO S/N ZONA: EL TAMBO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2877,
+			"id_entidad": 7892,
+			"latitud": -17.3861457,
+			"longitud": -66.1001319,
+			"nombreEstacion": "ESTACION DE SERVICIO ANITA",
+			"direccion": "AVENIDA ELIODORO VILLAZON NRO. 5824 ZONA PUNTITI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2409,
+			"id_entidad": 7903,
+			"latitud": -17.3917709,
+			"longitud": -66.2087413,
+			"nombreEstacion": "ESTACION DE SERVICIO LAS ISLAS",
+			"direccion": "AVENIDA BLANCO GALINDO KM 5 1/2 ESQUINA SEXTA S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2648,
+			"id_entidad": 7957,
+			"latitud": -17.3934068,
+			"longitud": -66.1741594,
+			"nombreEstacion": "AUTOMOVIL CLUB BOLIVIANO FILIAL COCHABAMBA - UNIDAD CARBURANTES S.R.L.",
+			"direccion": "COCHABAMBA - AVENIDA BLANCO GALINDO KM. 1 1/2 Nro 171 EDIFICIO: AUTOMOVIL CLUB PISO: PRIMER ZONA: HIPODROMO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2867,
+			"id_entidad": 8017,
+			"latitud": -17.5318928,
+			"longitud": -65.9707382,
+			"nombreEstacion": "ESTACION DE SERVICIO ARISPE",
+			"direccion": "COCHABAMBA - CARRETERA A SANTA CRUZ NRO S/N ZONA: TOLATA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3134,
+			"id_entidad": 16269,
+			"latitud": -17.422894,
+			"longitud": -66.1199884,
+			"nombreEstacion": "ESTACION DE SERVICIO SAN JUAN BAUTISTA S.R.L.",
+			"direccion": "AVENIDA GUAYACAN NRO S/N  ZONA: VILLA EUCALIPTOS NORTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3012,
+			"id_entidad": 15494,
+			"latitud": -17.541892,
+			"longitud": -65.841989,
+			"nombreEstacion": "ESTACION DE SERVICIO EQGAS S.R.L.",
+			"direccion": "CALLE TTE. LUCIO CANEDO S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3077,
+			"id_entidad": 7884,
+			"latitud": -17.3985383,
+			"longitud": -66.0524195,
+			"nombreEstacion": "ESTACION DE SERVICIO CITY TRUCK FH S.R.L.",
+			"direccion": "AV. VILLAZON KM 10.5",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3102,
+			"id_entidad": 19021,
+			"latitud": -17.383223,
+			"longitud": -66.183007,
+			"nombreEstacion": "ESTACION DE SERVICIO PANAMERICANA SUCURSAL COCHABAMBA",
+			"direccion": "COCHABAMBA - AVENIDA TADEO HAENKE ESQ. CALLE ISMAEL CESPEDES S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2643,
+			"id_entidad": 961,
+			"latitud": -17.3959165,
+			"longitud": -66.3202457,
+			"nombreEstacion": "DISEL S.R.L. SUCURSAL 1",
+			"direccion": "AVENIDA ALBINA PATIÑO S/N ZONA PURGATORIO - COCHABAMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2305,
+			"id_entidad": 7669,
+			"latitud": -17.205887,
+			"longitud": -64.5189559,
+			"nombreEstacion": "CARRASCO S.R.L. COMERCIALIZADORA DE HIDROCARBUROS",
+			"direccion": "COCHABAMBA- CALLE CHIRIGUANO ESQ. LAIME Nro 42: ZONA SARCOBAMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2640,
+			"id_entidad": 7854,
+			"latitud": -17.408221,
+			"longitud": -66.331176,
+			"nombreEstacion": "COMPAÑIA COMERCIAL DE GAS COMPRIMIDO CGC SRL",
+			"direccion": "CARRETERA CONFITAL KM 19 1/2",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 4029,
+			"id_entidad": 1712,
+			"latitud": -17.4387464,
+			"longitud": -66.1622075,
+			"nombreEstacion": "ESTACION DE SERVICIO LORETO S.R.L.- SUCURSAL COCHABAMBA I",
+			"direccion": "AV. PANAMERICANA ENTRE SANTA BARBARA Y SANTA INES",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2640,
+			"id_entidad": 7854,
+			"latitud": -17.408221,
+			"longitud": -66.331176,
+			"nombreEstacion": "COMPAÑIA COMERCIAL DE GAS COMPRIMIDO CGC SRL",
+			"direccion": "CARRETERA CONFITAL KM 19 1/2",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2709,
+			"id_entidad": 2118,
+			"latitud": -17.4063164,
+			"longitud": -66.0063713,
+			"nombreEstacion": "ESTACION DE SERVICIO TRANS SACABA S.A.II",
+			"direccion": "CARRETERA NUEVA A SANTA CRUZ KM.18 1/2",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2951,
+			"id_entidad": 8066,
+			"latitud": -18.1971489,
+			"longitud": -65.1788316,
+			"nombreEstacion": "SURTIDOR CAMPERO",
+			"direccion": "AV BOLIVAR NRO S/N ZONA EL RETIRO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2417,
+			"id_entidad": 7868,
+			"latitud": -17.3800664,
+			"longitud": -65.9797547,
+			"nombreEstacion": "ISABEL CHAVEZ",
+			"direccion": "AV. PETROLERA KM 9 ZONA: USPA-USPA.",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2916,
+			"id_entidad": 7909,
+			"latitud": -17.468408,
+			"longitud": -66.3390364,
+			"nombreEstacion": "ESTACION DE SERVICIO SUTICOLLO",
+			"direccion": "COCHABAMBA - KM 26 CARRETERA CONFITAL NRO S/N ZONA: SUTICOLLO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2417,
+			"id_entidad": 7868,
+			"latitud": -17.3800664,
+			"longitud": -65.9797547,
+			"nombreEstacion": "ISABEL CHAVEZ",
+			"direccion": "AV. PETROLERA KM 9 ZONA: USPA-USPA.",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2633,
+			"id_entidad": 8021,
+			"latitud": -17.3746605,
+			"longitud": -66.1567481,
+			"nombreEstacion": "CENTRO DE SERVICIO PORTALEZ SRL",
+			"direccion": "AV. SANTA CRUZ NRO 1400",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3063,
+			"id_entidad": 11243,
+			"latitud": -17.338446,
+			"longitud": -66.222632,
+			"nombreEstacion": "FORTALEZA ENERGY S.R.L.",
+			"direccion": "TIQUIPAYA - CALLE COCHABAMBA NRO 742 ZONA:CENTRAL",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3081,
+			"id_entidad": 20238,
+			"latitud": -17.4075785,
+			"longitud": -65.9991736,
+			"nombreEstacion": "CHIÑATA S.R.L.",
+			"direccion": "SACABA - CARRETERA NUEVA SANTA CRUZ KM 20 NRO S/N ZONA: SAN GANGOCHE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2942,
+			"id_entidad": 7663,
+			"latitud": -17.7213732,
+			"longitud": -66.2835453,
+			"nombreEstacion": "ESTACION DE SERVICIO LA MERCED S.R.L.",
+			"direccion": "COCHABAMBA - AV. COBOCE Nro S/N ZONA: IRPA IRPA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2648,
+			"id_entidad": 7957,
+			"latitud": -17.3934068,
+			"longitud": -66.1741594,
+			"nombreEstacion": "AUTOMOVIL CLUB BOLIVIANO FILIAL COCHABAMBA - UNIDAD CARBURANTES S.R.L.",
+			"direccion": "COCHABAMBA - AVENIDA BLANCO GALINDO KM. 1 1/2 Nro 171 EDIFICIO: AUTOMOVIL CLUB PISO: PRIMER ZONA: HIPODROMO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2308,
+			"id_entidad": 7712,
+			"latitud": -17.4450822,
+			"longitud": -66.1379925,
+			"nombreEstacion": "ESTACION DE SERVICIO RIOJA",
+			"direccion": "AV. PETROLERA KM 4.5",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2228,
+			"id_entidad": 7673,
+			"latitud": -17.3393366,
+			"longitud": -66.2142654,
+			"nombreEstacion": "KHORA ESTACION DE SERVICIO",
+			"direccion": "AV. KHORA Y CALLE ENRIQUE FIEBIK NO. S/N ZONA: TIQUIPAYA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3005,
+			"id_entidad": 7926,
+			"latitud": -17.3668477,
+			"longitud": -66.1757811,
+			"nombreEstacion": "ESTACION DE SERVICIO SANTA MONICA S.R.L.",
+			"direccion": "AVENIDA MELCHOR PEREZ DE OLGUIN NRO 279 ANTES DE LLEGAR A LA  SIMON LOPEZ A MEDIA CUADRA  ZONA NORESTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3005,
+			"id_entidad": 7926,
+			"latitud": -17.3668477,
+			"longitud": -66.1757811,
+			"nombreEstacion": "ESTACION DE SERVICIO SANTA MONICA S.R.L.",
+			"direccion": "AVENIDA MELCHOR PEREZ DE OLGUIN NRO 279 ANTES DE LLEGAR A LA  SIMON LOPEZ A MEDIA CUADRA  ZONA NORESTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2416,
+			"id_entidad": 7725,
+			"latitud": -17.4195787,
+			"longitud": -66.1521789,
+			"nombreEstacion": "SURTIDOR NISSAN",
+			"direccion": "COCHABAMBA - AV. PETROLERA KM 1 NRO S/N ZONA: SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2769,
+			"id_entidad": 7724,
+			"latitud": -17.5606689,
+			"longitud": -66.3433721,
+			"nombreEstacion": "ESTACION DE SERVICIO PAROTANI S.R.L.",
+			"direccion": "COCHABAMBA - CARRETERA CONFITAL QUILLACOLLO- ORURO KM. 37 S/N ZONA PAROTANI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2954,
+			"id_entidad": 8092,
+			"latitud": -17.6342577,
+			"longitud": -65.2325892,
+			"nombreEstacion": "ESTACION DE SERVICIO EPIZANA",
+			"direccion": "CALLE MERCEDES ANAYA S/N ZONA EPIZANA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2910,
+			"id_entidad": 4973,
+			"latitud": -17.0398465,
+			"longitud": -64.866687,
+			"nombreEstacion": "IVIRGARZAMA",
+			"direccion": "IVIRGARZAMA - COCHABAMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2910,
+			"id_entidad": 4973,
+			"latitud": -17.0398465,
+			"longitud": -64.866687,
+			"nombreEstacion": "IVIRGARZAMA",
+			"direccion": "IVIRGARZAMA - COCHABAMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2800,
+			"id_entidad": 7737,
+			"latitud": -17.4050828,
+			"longitud": -66.0185646,
+			"nombreEstacion": "SURTIDOR VILLA OBRAJES",
+			"direccion": "AV. BARRIENTOS KM 17 1/2 ZONA: VILLA OBRAJES S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 4026,
+			"id_entidad": 7797,
+			"latitud": -16.9969531,
+			"longitud": -65.1487478,
+			"nombreEstacion": "ESTACION DE SERVICIO TRUJILLO ORELLANA",
+			"direccion": "AVENIDA  PANAMERICANA NRO S/N  ZONA CENTRAL CHIMORE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2633,
+			"id_entidad": 8021,
+			"latitud": -17.3746605,
+			"longitud": -66.1567481,
+			"nombreEstacion": "CENTRO DE SERVICIO PORTALEZ SRL",
+			"direccion": "AV. SANTA CRUZ NRO 1400",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2853,
+			"id_entidad": 11965,
+			"latitud": -17.3902432,
+			"longitud": -66.2755309,
+			"nombreEstacion": "ESTACION DE SERVICIO 20 DE DICIEMBRE",
+			"direccion": "CALLE 20 DE DICIEMBRE S/N ZONA IQUIRCOLLO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2600,
+			"id_entidad": 7895,
+			"latitud": -17.3920059,
+			"longitud": -66.2648048,
+			"nombreEstacion": "ESTACION DE SERVICIO IQUIRCOLLO S.R.L.",
+			"direccion": "COCHABAMBA-AV. BLANCO GALINDO KM 11 1/2 NRO S/N  UV: S/N MZNO: S/N ZONA: IQUIRCOLLO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2946,
+			"id_entidad": 8041,
+			"latitud": -16.165878,
+			"longitud": -66.0786438,
+			"nombreEstacion": "ESTACION DE SERVICIO ALEX",
+			"direccion": "KM 222 CARRETERA COCHABAMBA SANTA CRUZ LOCALIDAD IVIRGARZAMA CARRASCO PUERTO VILLARROEL",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2954,
+			"id_entidad": 8092,
+			"latitud": -17.6342577,
+			"longitud": -65.2325892,
+			"nombreEstacion": "ESTACION DE SERVICIO EPIZANA",
+			"direccion": "CALLE MERCEDES ANAYA S/N ZONA EPIZANA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2941,
+			"id_entidad": 8039,
+			"latitud": -17.5680744,
+			"longitud": -65.9352525,
+			"nombreEstacion": "ESTACION DE SERVICIO ADRIAN",
+			"direccion": "AV. MONS. WALTER ROSALES CLIZA S/N ZONA CLIZA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3077,
+			"id_entidad": 7884,
+			"latitud": -17.3985383,
+			"longitud": -66.0524195,
+			"nombreEstacion": "ESTACION DE SERVICIO CITY TRUCK FH S.R.L.",
+			"direccion": "AV. VILLAZON KM 10.5",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2555,
+			"id_entidad": 7812,
+			"latitud": -17.412664,
+			"longitud": -66.1550514,
+			"nombreEstacion": "EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L.",
+			"direccion": "AV. 6 DE AGOSTO # 159",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3012,
+			"id_entidad": 15494,
+			"latitud": -17.541892,
+			"longitud": -65.841989,
+			"nombreEstacion": "ESTACION DE SERVICIO EQGAS S.R.L.",
+			"direccion": "CALLE TTE. LUCIO CANEDO S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3090,
+			"id_entidad": 16198,
+			"latitud": -17.3571306,
+			"longitud": -65.8479499,
+			"nombreEstacion": "ESTACION DE SERVICIO CHULLPANI",
+			"direccion": "COLOMI - CARRETERA NUEVA A SANTA CRUZ KM 42 S/N ZONA CHULLPANI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3140,
+			"id_entidad": 17727,
+			"latitud": -17.3829451,
+			"longitud": -66.2838204,
+			"nombreEstacion": "ESTACION DE SERVICIO IQUIRCOLLO S.R.L. SUCURSAL",
+			"direccion": "QUILLACOLLO - CALLE  SANTA CRUZ  ENTRE  CALLE INNOMINADA S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3050,
+			"id_entidad": 15646,
+			"latitud": -17.347014,
+			"longitud": -66.1730648,
+			"nombreEstacion": "ESTACION DE SERVICIO COCHABAMBA S.R.L. SUCURSAL II",
+			"direccion": "AV. CIRCUNVALACION II S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2909,
+			"id_entidad": 4974,
+			"latitud": -16.976194,
+			"longitud": -65.4220908,
+			"nombreEstacion": "VILLA TUNARI",
+			"direccion": "VILLA TUNARI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2829,
+			"id_entidad": 7881,
+			"latitud": -17.6119443,
+			"longitud": -66.0239772,
+			"nombreEstacion": "INVERSIONES VALLE SUR S.A.",
+			"direccion": "PASAJEE TARIJA NRO S/N  EDIFICIO PRESIDENTE  PISO  PB ZONA NORTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2307,
+			"id_entidad": 7761,
+			"latitud": -17.4252143,
+			"longitud": -66.1330358,
+			"nombreEstacion": "ESTACION DE SERVICIO SEÑOR SANTIAGO",
+			"direccion": "COCHABAMBA - AV. SIGLO XX NRO 326 ZONA SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2297,
+			"id_entidad": 8071,
+			"latitud": -17.3636363,
+			"longitud": -66.2295043,
+			"nombreEstacion": "ESTACION DE SERVICIO MAX MAMANGUEÑO",
+			"direccion": "AV. REDUCTO S/N ZONA CUATRO ESQUINAS",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2408,
+			"id_entidad": 8084,
+			"latitud": -17.3922171,
+			"longitud": -66.219124,
+			"nombreEstacion": "ESTACION DE SERVICIO MONTERREY S.R.L.",
+			"direccion": "AV. BLANCO GALINDO KM 6.7 ZONA: SANTA ROSA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2462,
+			"id_entidad": 57136,
+			"latitud": -17.42047,
+			"longitud": -66.15268,
+			"nombreEstacion": "ESTAGAS SOCIEDAD DE RESPONSABILIDAD LIMITADA ESTAGAS S.R.L.",
+			"direccion": "COCHABAMBA - AV. PETROLERA KM 1 NRO 2827 ESQ. SAMAYPATA ZONA SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3171,
+			"id_entidad": 47747,
+			"latitud": -17.6036075,
+			"longitud": -66.0328372,
+			"nombreEstacion": "ESTACION DE SERVICIO PAPU S.R.L.",
+			"direccion": "AVENIDA LOS LIBERTADORES Nro S/N, ZONA LADERA LOTE Nro 30 MANZANO D",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3158,
+			"id_entidad": 14867,
+			"latitud": -16.8889664,
+			"longitud": -65.42189020000001,
+			"nombreEstacion": "ESTACION DE SERVICIO TRANS NACIONAL ETERAZAMA S.A.",
+			"direccion": "CARRETERA VILLA TUNARI - ETERAZAMA KM 28",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2612,
+			"id_entidad": 9159,
+			"latitud": -17.432796,
+			"longitud": -66.1603725,
+			"nombreEstacion": "GASNOR SERVICIOS PETROLEROS S.R.L. GASNOR S.R.L.",
+			"direccion": "COCHABAMBA -AV. PANAMERICA NRO S/N ZONA:SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2651,
+			"id_entidad": 7929,
+			"latitud": -17.3959348,
+			"longitud": -66.3207946,
+			"nombreEstacion": "EL VIAJERO COMBUSTIBLE Y SERVICIOS S.R.L.",
+			"direccion": "AV. ALBINA PATIÑO KM 16.5 ESQ. CALLE ROSAS",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2295,
+			"id_entidad": 39464,
+			"latitud": -17.3602861,
+			"longitud": -66.1726928,
+			"nombreEstacion": "ESTACION DE SERVICIO SEÑOR SANTIAGO SUCURSAL 1",
+			"direccion": "AV. MELCHOR PEREZ DE OLGUIN ESQ. AV. CIRCUNVALACION",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3134,
+			"id_entidad": 16269,
+			"latitud": -17.422894,
+			"longitud": -66.1199884,
+			"nombreEstacion": "ESTACION DE SERVICIO SAN JUAN BAUTISTA S.R.L.",
+			"direccion": "AVENIDA GUAYACAN NRO S/N  ZONA: VILLA EUCALIPTOS NORTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3124,
+			"id_entidad": 30064,
+			"latitud": -17.4311736,
+			"longitud": -66.1501086,
+			"nombreEstacion": "ESTACION DE SERVICIO TICTI S.R.L.",
+			"direccion": "COCHABAMBA - AV. PETROLERA KM. 2 NRO S/N MZNO: 005 ZONA: TICTI SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3237,
+			"id_entidad": 64772,
+			"latitud": -17.34876,
+			"longitud": -66.19041,
+			"nombreEstacion": "LA PATRIA S.R.L.",
+			"direccion": "CHAPISIRCA NRO. SN ZONA CHILIMARCA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2789,
+			"id_entidad": 8053,
+			"latitud": -17.5147628,
+			"longitud": -65.8560062,
+			"nombreEstacion": "ESTACION DE SERVICIO COODPE",
+			"direccion": "COCHABAMBA - CARRETERA CBBA - SANTA CRUZ KM.43 NRO S/N ZONA PARACAYA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2597,
+			"id_entidad": 8083,
+			"latitud": -17.4033052,
+			"longitud": -66.1575588,
+			"nombreEstacion": "TERMINAL DE BUSES COCHABAMBA S.A.",
+			"direccion": "AV. AYACUCHO Nro S/N EDIFICIO: TERMINAL DE BUSES ZONA: SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2740,
+			"id_entidad": 7900,
+			"latitud": -17.0453354,
+			"longitud": -64.8616689,
+			"nombreEstacion": "SILVIA ELIZABETH CESPEDES AGUILAR",
+			"direccion": "COCHABAMBA - CARRETERA A SANTA CRUZ KM 220 NRO S/N ZONA: IVIRGARZAMA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2951,
+			"id_entidad": 8066,
+			"latitud": -18.1971489,
+			"longitud": -65.1788316,
+			"nombreEstacion": "SURTIDOR CAMPERO",
+			"direccion": "AV BOLIVAR NRO S/N ZONA EL RETIRO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3234,
+			"id_entidad": 66283,
+			"latitud": -17.38434,
+			"longitud": -66.36018,
+			"nombreEstacion": "PETROCEL S.R.L.",
+			"direccion": "AV. ERNESTO CESPEDES NRO. SIN NUMERO ZONA CENTRAL",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3133,
+			"id_entidad": 27416,
+			"latitud": -17.56025,
+			"longitud": -65.9366661,
+			"nombreEstacion": "ESTACION DE SERVICIO PAREDES VALLEJOS",
+			"direccion": "COCHABAMBA - AV. MONSEÑOR WALTER ROSALES KM 30 Nro S/N ZONA: VILLA GRACIELA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3044,
+			"id_entidad": 61875,
+			"latitud": -17.38642,
+			"longitud": -66.19217,
+			"nombreEstacion": "LOS LAURELES",
+			"direccion": " AV. DORBIGNI ESQ. CHIRIGUANOS",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2486,
+			"id_entidad": 7740,
+			"latitud": -17.346984,
+			"longitud": -66.1999537,
+			"nombreEstacion": "VENICIA ALANEZ JIMENES",
+			"direccion": "AV. ECOLOGICA S/N ZONA TROJES",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2782,
+			"id_entidad": 26035,
+			"latitud": -17.5806902,
+			"longitud": -66.3407632,
+			"nombreEstacion": "ESTACION DE SERVICIO ITAPAYA",
+			"direccion": "COCHABAMBA- CARRETERA A CAPINOTA KM. 39 Nro S/N EDIFICIO : ESTACION DE SERVICIO ITAPAYA ZONA: TAJRA - ITAPAYA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2866,
+			"id_entidad": 8113,
+			"latitud": -17.3337836,
+			"longitud": -65.8685316,
+			"nombreEstacion": "SURTIDOR DE GASOLINA Y DIESEL COLOMI",
+			"direccion": "COCHABAMBA CARRETERA CHAPARE KM 45 NRO S/N ZONA COLOMI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2856,
+			"id_entidad": 8052,
+			"latitud": -17.4336921,
+			"longitud": -65.722615,
+			"nombreEstacion": "ESTACION DE SERVICIO TIRAQUE",
+			"direccion": "COCHABAMBA AV SANTA CRUZ NRO S/N ZONA TIRAQUE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2789,
+			"id_entidad": 8053,
+			"latitud": -17.5147628,
+			"longitud": -65.8560062,
+			"nombreEstacion": "ESTACION DE SERVICIO COODPE",
+			"direccion": "COCHABAMBA - CARRETERA CBBA - SANTA CRUZ KM.43 NRO S/N ZONA PARACAYA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3095,
+			"id_entidad": 22746,
+			"latitud": -17.3917272,
+			"longitud": -66.2510492,
+			"nombreEstacion": "ESTACION DE SERVICIO PARAJE 24.7 S.R.L.",
+			"direccion": "COCHABAMBA - AV. BLANCO GALINDO KM. 10  Nro S/N  ZONA: PIÑAMI SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3135,
+			"id_entidad": 22744,
+			"latitud": -17.3936186,
+			"longitud": -66.2591986,
+			"nombreEstacion": "ESTACION DE SERVICIO PARAJE 24.7 S.R.L.- SUCURSAL COCHABAMBA I",
+			"direccion": "AVENIDA VICTOR USTARIZ KM.11.5 ZONA PIÑAMI\t",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3212,
+			"id_entidad": 38127,
+			"latitud": -17.763298,
+			"longitud": -64.855535,
+			"nombreEstacion": "ESTACION DE SERVICIO \"POJO\"",
+			"direccion": "POJO - LC POJO NRO S/N UV: S/N MZNO: S/N  ZONA: POJO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2800,
+			"id_entidad": 7737,
+			"latitud": -17.4050828,
+			"longitud": -66.0185646,
+			"nombreEstacion": "SURTIDOR VILLA OBRAJES",
+			"direccion": "AV. BARRIENTOS KM 17 1/2 ZONA: VILLA OBRAJES S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 4029,
+			"id_entidad": 1712,
+			"latitud": -17.4387464,
+			"longitud": -66.1622075,
+			"nombreEstacion": "ESTACION DE SERVICIO LORETO S.R.L.- SUCURSAL COCHABAMBA I",
+			"direccion": "AV. PANAMERICANA ENTRE SANTA BARBARA Y SANTA INES",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2769,
+			"id_entidad": 7724,
+			"latitud": -17.5606689,
+			"longitud": -66.3433721,
+			"nombreEstacion": "ESTACION DE SERVICIO PAROTANI S.R.L.",
+			"direccion": "COCHABAMBA - CARRETERA CONFITAL QUILLACOLLO- ORURO KM. 37 S/N ZONA PAROTANI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2959,
+			"id_entidad": 7959,
+			"latitud": -17.5312364,
+			"longitud": -65.8513061,
+			"nombreEstacion": "ESTACION DE SERVICIO LOS LIBERTADORES S.R.L.",
+			"direccion": "AV.SILES Y PARACAYA S/N ZONA: MUYU HUYO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2556,
+			"id_entidad": 7834,
+			"latitud": -17.3828462,
+			"longitud": -66.1605249,
+			"nombreEstacion": "ESTACION DE SERVICIO AYACUCHO",
+			"direccion": "COCHABAMBA - AV. AYACUCHO NRO 894 ZONA CENTRAL NORTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2455,
+			"id_entidad": 7813,
+			"latitud": -17.3925976,
+			"longitud": -66.1889949,
+			"nombreEstacion": "ESTACION DE SERVICIO LOS ALAMOS",
+			"direccion": "AVENIDA BLANCO GALINDO  KILOMETRO 3 1/2  ESQUINA CALLE LOS ALAMOS  NRO S/N VILLA BUSCH NORTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2853,
+			"id_entidad": 11965,
+			"latitud": -17.3902432,
+			"longitud": -66.2755309,
+			"nombreEstacion": "ESTACION DE SERVICIO 20 DE DICIEMBRE",
+			"direccion": "CALLE 20 DE DICIEMBRE S/N ZONA IQUIRCOLLO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2959,
+			"id_entidad": 7959,
+			"latitud": -17.5312364,
+			"longitud": -65.8513061,
+			"nombreEstacion": "ESTACION DE SERVICIO LOS LIBERTADORES S.R.L.",
+			"direccion": "AV.SILES Y PARACAYA S/N ZONA: MUYU HUYO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2942,
+			"id_entidad": 7663,
+			"latitud": -17.7213732,
+			"longitud": -66.2835453,
+			"nombreEstacion": "ESTACION DE SERVICIO LA MERCED S.R.L.",
+			"direccion": "COCHABAMBA - AV. COBOCE Nro S/N ZONA: IRPA IRPA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2584,
+			"id_entidad": 8068,
+			"latitud": -16.9795769,
+			"longitud": -65.4279702,
+			"nombreEstacion": "ESTACION DE SERVICIO EL TROPICO SRL",
+			"direccion": "AV. INTEGRACION KM 159 VILLA TUNARI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2656,
+			"id_entidad": 7819,
+			"latitud": -17.4427554,
+			"longitud": -66.337881,
+			"nombreEstacion": "ESTACION DE SERVICIOS SIPE SIPE S.R.L.",
+			"direccion": "ZONA MONTENEGRO,CARRETERA COCHABAMBA ORURO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 4023,
+			"id_entidad": 8067,
+			"latitud": -16.9934356,
+			"longitud": -65.2570371,
+			"nombreEstacion": "ESTACION DE SERVICIO FATIMA S.R.L.",
+			"direccion": "CARRETERA COCHABAMBA-SANTA CRUZ KM 180 S/N SHINAHOTA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3023,
+			"id_entidad": 8070,
+			"latitud": -16.8231239,
+			"longitud": -65.5410712,
+			"nombreEstacion": "ESTACION DE SERVICIO TRANS TRICOLOR NACIONAL S.A.",
+			"direccion": "COCHABAMBA CARRETERA A TRINIDAD KM 51 S/N ZONA ETERAZAMA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3168,
+			"id_entidad": 38422,
+			"latitud": -17.3960518,
+			"longitud": -66.2860897,
+			"nombreEstacion": "CENTRO DE SERVICIOS PETROCEL",
+			"direccion": "ERNESTO CESPEDES S/N - QUILLACOLLO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3066,
+			"id_entidad": 17484,
+			"latitud": -17.3753363,
+			"longitud": -66.1362185,
+			"nombreEstacion": "ESTACION DE SERVICIO \"LOS ALPES\"",
+			"direccion": "CERCADO - AV. VILLAZON NRO S/N ZONA: MUYURINA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3043,
+			"id_entidad": 8013,
+			"latitud": -17.5684056,
+			"longitud": -65.776293,
+			"nombreEstacion": "ESTACION DE SERVICIO ARANI",
+			"direccion": "AV. INGAVI S/N ZONA ARANI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2753,
+			"id_entidad": 7891,
+			"latitud": -16.9963069,
+			"longitud": -65.1609241,
+			"nombreEstacion": "ESTACION DE SERVICIO CHIMORE",
+			"direccion": "CARRETERA NUEVA COCHABAMBA - STA CRUZ KM 198 LOCALIDAD CHIMORE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2408,
+			"id_entidad": 8084,
+			"latitud": -17.3922171,
+			"longitud": -66.219124,
+			"nombreEstacion": "ESTACION DE SERVICIO MONTERREY S.R.L.",
+			"direccion": "AV. BLANCO GALINDO KM 6.7 ZONA: SANTA ROSA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3050,
+			"id_entidad": 15646,
+			"latitud": -17.347014,
+			"longitud": -66.1730648,
+			"nombreEstacion": "ESTACION DE SERVICIO COCHABAMBA S.R.L. SUCURSAL II",
+			"direccion": "AV. CIRCUNVALACION II S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2794,
+			"id_entidad": 8987,
+			"latitud": -17.4011468,
+			"longitud": -66.1825494,
+			"nombreEstacion": "ESTACION DE SERVICIO COCHABAMBA S.R.L.",
+			"direccion": "AV. MELCHOR PEREZ DE OLGUIN S/N  ZONA CHIMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3192,
+			"id_entidad": 60287,
+			"latitud": -17.37233,
+			"longitud": -66.16903,
+			"nombreEstacion": "ESTACION DE SERVICIO DELAASUNCION-AMERICA S.R.L.",
+			"direccion": "AV. AMERICA ESQUINA DANIEL ALBORNOZ NRO. S/N MZNO: 064 ZONA: NOROESTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3090,
+			"id_entidad": 16198,
+			"latitud": -17.3571306,
+			"longitud": -65.8479499,
+			"nombreEstacion": "ESTACION DE SERVICIO CHULLPANI",
+			"direccion": "COLOMI - CARRETERA NUEVA A SANTA CRUZ KM 42 S/N ZONA CHULLPANI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2792,
+			"id_entidad": 8873,
+			"latitud": -16.9758809,
+			"longitud": -65.4217511,
+			"nombreEstacion": "ESTACION DE SERVICIO SAN MATEO S.R.L.",
+			"direccion": "COCHABAMBA - CARRETERA CBBA-SANTA CRUZ KM. 160 NRO S/N ZONA: VILLA TUNARI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3251,
+			"id_entidad": 64709,
+			"latitud": -17.45525,
+			"longitud": -65.81434,
+			"nombreEstacion": "ESTACION DE SERVICIO VIRGEN DE LAS ANGUSTIAS S.R.L.",
+			"direccion": "CAMINO A TIRAQUE NRO. 00 ZONA SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3158,
+			"id_entidad": 14867,
+			"latitud": -16.8889664,
+			"longitud": -65.42189020000001,
+			"nombreEstacion": "ESTACION DE SERVICIO TRANS NACIONAL ETERAZAMA S.A.",
+			"direccion": "CARRETERA VILLA TUNARI - ETERAZAMA KM 28",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3237,
+			"id_entidad": 64772,
+			"latitud": -17.34876,
+			"longitud": -66.19041,
+			"nombreEstacion": "LA PATRIA S.R.L.",
+			"direccion": "CHAPISIRCA NRO. SN ZONA CHILIMARCA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3044,
+			"id_entidad": 61875,
+			"latitud": -17.38642,
+			"longitud": -66.19217,
+			"nombreEstacion": "LOS LAURELES",
+			"direccion": " AV. DORBIGNI ESQ. CHIRIGUANOS",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2866,
+			"id_entidad": 8113,
+			"latitud": -17.3337836,
+			"longitud": -65.8685316,
+			"nombreEstacion": "SURTIDOR DE GASOLINA Y DIESEL COLOMI",
+			"direccion": "COCHABAMBA CARRETERA CHAPARE KM 45 NRO S/N ZONA COLOMI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3234,
+			"id_entidad": 66283,
+			"latitud": -17.38434,
+			"longitud": -66.36018,
+			"nombreEstacion": "PETROCEL S.R.L.",
+			"direccion": "AV. ERNESTO CESPEDES NRO. SIN NUMERO ZONA CENTRAL",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3168,
+			"id_entidad": 38422,
+			"latitud": -17.3960518,
+			"longitud": -66.2860897,
+			"nombreEstacion": "CENTRO DE SERVICIOS PETROCEL",
+			"direccion": "ERNESTO CESPEDES S/N - QUILLACOLLO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2486,
+			"id_entidad": 7740,
+			"latitud": -17.346984,
+			"longitud": -66.1999537,
+			"nombreEstacion": "VENICIA ALANEZ JIMENES",
+			"direccion": "AV. ECOLOGICA S/N ZONA TROJES",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2305,
+			"id_entidad": 7669,
+			"latitud": -17.205887,
+			"longitud": -64.5189559,
+			"nombreEstacion": "CARRASCO S.R.L. COMERCIALIZADORA DE HIDROCARBUROS",
+			"direccion": "COCHABAMBA- CALLE CHIRIGUANO ESQ. LAIME Nro 42: ZONA SARCOBAMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2697,
+			"id_entidad": 7916,
+			"latitud": -17.4000347,
+			"longitud": -66.0437716,
+			"nombreEstacion": "ESTACION DE SERVICIO CHIMBOCO",
+			"direccion": "AV. BARRIENTOS S/N KM 14.5 ZONA CHIMBOCO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2597,
+			"id_entidad": 8083,
+			"latitud": -17.4033052,
+			"longitud": -66.1575588,
+			"nombreEstacion": "TERMINAL DE BUSES COCHABAMBA S.A.",
+			"direccion": "AV. AYACUCHO Nro S/N EDIFICIO: TERMINAL DE BUSES ZONA: SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2740,
+			"id_entidad": 7900,
+			"latitud": -17.0453354,
+			"longitud": -64.8616689,
+			"nombreEstacion": "SILVIA ELIZABETH CESPEDES AGUILAR",
+			"direccion": "COCHABAMBA - CARRETERA A SANTA CRUZ KM 220 NRO S/N ZONA: IVIRGARZAMA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3133,
+			"id_entidad": 27416,
+			"latitud": -17.56025,
+			"longitud": -65.9366661,
+			"nombreEstacion": "ESTACION DE SERVICIO PAREDES VALLEJOS",
+			"direccion": "COCHABAMBA - AV. MONSEÑOR WALTER ROSALES KM 30 Nro S/N ZONA: VILLA GRACIELA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2663,
+			"id_entidad": 7677,
+			"latitud": -17.4161668,
+			"longitud": -66.0612373,
+			"nombreEstacion": "COMERCIALIZADORA \"QK\" S.R.L.",
+			"direccion": "COCHABAMBA- AVENIDA. VILLAZON KM 11.1/2 NRO S/N EDIFICIO SURTIDOR \"QK\" ZONA:GUADALUPE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2729,
+			"id_entidad": 7683,
+			"latitud": -17.4086919,
+			"longitud": -66.1729364,
+			"nombreEstacion": "ESTACION DE SERVICIO AEROPUERTO SRL.",
+			"direccion": "AV. 6 DE AGOSTO Y LUIS URIONA S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2652,
+			"id_entidad": 7776,
+			"latitud": -17.3963452,
+			"longitud": -66.1708979,
+			"nombreEstacion": "ESTACION DE SERVICIO LAS PALMERAS S.R.L.",
+			"direccion": "COCHABAMBA - AV. GENERAL CAMPERO ESQ. AV. USTARIZ NRO S/N ZONA: CHIMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3212,
+			"id_entidad": 38127,
+			"latitud": -17.763298,
+			"longitud": -64.855535,
+			"nombreEstacion": "ESTACION DE SERVICIO \"POJO\"",
+			"direccion": "POJO - LC POJO NRO S/N UV: S/N MZNO: S/N  ZONA: POJO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2612,
+			"id_entidad": 9159,
+			"latitud": -17.432796,
+			"longitud": -66.1603725,
+			"nombreEstacion": "GASNOR SERVICIOS PETROLEROS S.R.L. GASNOR S.R.L.",
+			"direccion": "COCHABAMBA -AV. PANAMERICA NRO S/N ZONA:SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2782,
+			"id_entidad": 26035,
+			"latitud": -17.5806902,
+			"longitud": -66.3407632,
+			"nombreEstacion": "ESTACION DE SERVICIO ITAPAYA",
+			"direccion": "COCHABAMBA- CARRETERA A CAPINOTA KM. 39 Nro S/N EDIFICIO : ESTACION DE SERVICIO ITAPAYA ZONA: TAJRA - ITAPAYA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2523,
+			"id_entidad": 7699,
+			"latitud": -17.3875782,
+			"longitud": -66.167336,
+			"nombreEstacion": "ESTACION DE SERVICIO DORBIGNI",
+			"direccion": "AV. DORBIGNI NRO 1201 ZONA VILLA GALINDO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2523,
+			"id_entidad": 7699,
+			"latitud": -17.3875782,
+			"longitud": -66.167336,
+			"nombreEstacion": "ESTACION DE SERVICIO DORBIGNI",
+			"direccion": "AV. DORBIGNI NRO 1201 ZONA VILLA GALINDO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2946,
+			"id_entidad": 8041,
+			"latitud": -16.165878,
+			"longitud": -66.0786438,
+			"nombreEstacion": "ESTACION DE SERVICIO ALEX",
+			"direccion": "KM 222 CARRETERA COCHABAMBA SANTA CRUZ LOCALIDAD IVIRGARZAMA CARRASCO PUERTO VILLARROEL",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2455,
+			"id_entidad": 7813,
+			"latitud": -17.3925976,
+			"longitud": -66.1889949,
+			"nombreEstacion": "ESTACION DE SERVICIO LOS ALAMOS",
+			"direccion": "AVENIDA BLANCO GALINDO  KILOMETRO 3 1/2  ESQUINA CALLE LOS ALAMOS  NRO S/N VILLA BUSCH NORTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3116,
+			"id_entidad": 58094,
+			"latitud": -17.54174,
+			"longitud": -66.22242,
+			"nombreEstacion": "SUCURSAL NRO 1",
+			"direccion": "AV. CHAPISIRCA ENTRE CALLE LITORAL Y CIUDAD DEL NIÑO, ZONA: CHILIMARCA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2658,
+			"id_entidad": 8011,
+			"latitud": -17.4005138,
+			"longitud": -66.0465662,
+			"nombreEstacion": "ESTACION DE SERVICIO TRANS SACABA S.A.",
+			"direccion": "CALLE AYACUCHO NRO 700 ZONA MIRAFLORES",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3098,
+			"id_entidad": 7727,
+			"latitud": -17.4479,
+			"longitud": -66.1249643,
+			"nombreEstacion": "ESTACION DE SERVICIO REFINERIA",
+			"direccion": "COCHABAMBA - AVENIDA SIGO XX NRO 500 ZONA: VALLE HERMOSO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2794,
+			"id_entidad": 8987,
+			"latitud": -17.4011468,
+			"longitud": -66.1825494,
+			"nombreEstacion": "ESTACION DE SERVICIO COCHABAMBA S.R.L.",
+			"direccion": "AV. MELCHOR PEREZ DE OLGUIN S/N  ZONA CHIMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2829,
+			"id_entidad": 7881,
+			"latitud": -17.6119443,
+			"longitud": -66.0239772,
+			"nombreEstacion": "INVERSIONES VALLE SUR S.A.",
+			"direccion": "PASAJEE TARIJA NRO S/N  EDIFICIO PRESIDENTE  PISO  PB ZONA NORTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2228,
+			"id_entidad": 7673,
+			"latitud": -17.3393366,
+			"longitud": -66.2142654,
+			"nombreEstacion": "KHORA ESTACION DE SERVICIO",
+			"direccion": "AV. KHORA Y CALLE ENRIQUE FIEBIK NO. S/N ZONA: TIQUIPAYA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2657,
+			"id_entidad": 7804,
+			"latitud": -17.3795766,
+			"longitud": -66.1657508,
+			"nombreEstacion": "SURTIDOR EL CRISTO",
+			"direccion": "AVENIDA JUAN DE LA ROSA NRO 121",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3116,
+			"id_entidad": 58094,
+			"latitud": -17.54174,
+			"longitud": -66.22242,
+			"nombreEstacion": "SUCURSAL NRO 1",
+			"direccion": "AV. CHAPISIRCA ENTRE CALLE LITORAL Y CIUDAD DEL NIÑO, ZONA: CHILIMARCA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2578,
+			"id_entidad": 7840,
+			"latitud": -17.405131,
+			"longitud": -66.1797237,
+			"nombreEstacion": "PETROGAS SERVICIOS PETROLEROS S.R.L.",
+			"direccion": "COCHABAMBA- AV. INGAVI ESQUINA DANIEL CAMPOS NRO S/N ZONA: CHIMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3081,
+			"id_entidad": 20238,
+			"latitud": -17.4075785,
+			"longitud": -65.9991736,
+			"nombreEstacion": "CHIÑATA S.R.L.",
+			"direccion": "SACABA - CARRETERA NUEVA SANTA CRUZ KM 20 NRO S/N ZONA: SAN GANGOCHE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2562,
+			"id_entidad": 8009,
+			"latitud": -17.5392932,
+			"longitud": -65.8483072,
+			"nombreEstacion": "ESTACION DE SERVICIO PUNATA",
+			"direccion": "AV. SILES NO.10 PUNATA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3073,
+			"id_entidad": 18862,
+			"latitud": -17.0099051,
+			"longitud": -65.4476406,
+			"nombreEstacion": "ESTACION DE SERVICIO FOX J.G.J S.R.L.",
+			"direccion": "AV INTEGRACION CARRETERA CBBA-SANTA CRUZ KM 158",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3135,
+			"id_entidad": 22744,
+			"latitud": -17.3936186,
+			"longitud": -66.2591986,
+			"nombreEstacion": "ESTACION DE SERVICIO PARAJE 24.7 S.R.L.- SUCURSAL COCHABAMBA I",
+			"direccion": "AVENIDA VICTOR USTARIZ KM.11.5 ZONA PIÑAMI\t",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2562,
+			"id_entidad": 8009,
+			"latitud": -17.5392932,
+			"longitud": -65.8483072,
+			"nombreEstacion": "ESTACION DE SERVICIO PUNATA",
+			"direccion": "AV. SILES NO.10 PUNATA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2729,
+			"id_entidad": 7683,
+			"latitud": -17.4086919,
+			"longitud": -66.1729364,
+			"nombreEstacion": "ESTACION DE SERVICIO AEROPUERTO SRL.",
+			"direccion": "AV. 6 DE AGOSTO Y LUIS URIONA S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3149,
+			"id_entidad": 41702,
+			"latitud": -17.2531622,
+			"longitud": -64.3632164,
+			"nombreEstacion": "SUCURSAL COCHABAMBA",
+			"direccion": "COCHABAMBA - AV. PANAMERICANA S/N, ZONA: BULO BULO - ENTRE RIOS",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3149,
+			"id_entidad": 41702,
+			"latitud": -17.2531622,
+			"longitud": -64.3632164,
+			"nombreEstacion": "SUCURSAL COCHABAMBA",
+			"direccion": "COCHABAMBA - AV. PANAMERICANA S/N, ZONA: BULO BULO - ENTRE RIOS",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3023,
+			"id_entidad": 8070,
+			"latitud": -16.8231239,
+			"longitud": -65.5410712,
+			"nombreEstacion": "ESTACION DE SERVICIO TRANS TRICOLOR NACIONAL S.A.",
+			"direccion": "COCHABAMBA CARRETERA A TRINIDAD KM 51 S/N ZONA ETERAZAMA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 4023,
+			"id_entidad": 8067,
+			"latitud": -16.9934356,
+			"longitud": -65.2570371,
+			"nombreEstacion": "ESTACION DE SERVICIO FATIMA S.R.L.",
+			"direccion": "CARRETERA COCHABAMBA-SANTA CRUZ KM 180 S/N SHINAHOTA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2584,
+			"id_entidad": 8068,
+			"latitud": -16.9795769,
+			"longitud": -65.4279702,
+			"nombreEstacion": "ESTACION DE SERVICIO EL TROPICO SRL",
+			"direccion": "AV. INTEGRACION KM 159 VILLA TUNARI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3098,
+			"id_entidad": 7727,
+			"latitud": -17.4479,
+			"longitud": -66.1249643,
+			"nombreEstacion": "ESTACION DE SERVICIO REFINERIA",
+			"direccion": "COCHABAMBA - AVENIDA SIGO XX NRO 500 ZONA: VALLE HERMOSO",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2652,
+			"id_entidad": 7776,
+			"latitud": -17.3963452,
+			"longitud": -66.1708979,
+			"nombreEstacion": "ESTACION DE SERVICIO LAS PALMERAS S.R.L.",
+			"direccion": "COCHABAMBA - AV. GENERAL CAMPERO ESQ. AV. USTARIZ NRO S/N ZONA: CHIMBA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2792,
+			"id_entidad": 8873,
+			"latitud": -16.9758809,
+			"longitud": -65.4217511,
+			"nombreEstacion": "ESTACION DE SERVICIO SAN MATEO S.R.L.",
+			"direccion": "COCHABAMBA - CARRETERA CBBA-SANTA CRUZ KM. 160 NRO S/N ZONA: VILLA TUNARI",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3140,
+			"id_entidad": 17727,
+			"latitud": -17.3829451,
+			"longitud": -66.2838204,
+			"nombreEstacion": "ESTACION DE SERVICIO IQUIRCOLLO S.R.L. SUCURSAL",
+			"direccion": "QUILLACOLLO - CALLE  SANTA CRUZ  ENTRE  CALLE INNOMINADA S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2556,
+			"id_entidad": 7834,
+			"latitud": -17.3828462,
+			"longitud": -66.1605249,
+			"nombreEstacion": "ESTACION DE SERVICIO AYACUCHO",
+			"direccion": "COCHABAMBA - AV. AYACUCHO NRO 894 ZONA CENTRAL NORTE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3073,
+			"id_entidad": 18862,
+			"latitud": -17.0099051,
+			"longitud": -65.4476406,
+			"nombreEstacion": "ESTACION DE SERVICIO FOX J.G.J S.R.L.",
+			"direccion": "AV INTEGRACION CARRETERA CBBA-SANTA CRUZ KM 158",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3066,
+			"id_entidad": 17484,
+			"latitud": -17.3753363,
+			"longitud": -66.1362185,
+			"nombreEstacion": "ESTACION DE SERVICIO \"LOS ALPES\"",
+			"direccion": "CERCADO - AV. VILLAZON NRO S/N ZONA: MUYURINA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3102,
+			"id_entidad": 19021,
+			"latitud": -17.383223,
+			"longitud": -66.183007,
+			"nombreEstacion": "ESTACION DE SERVICIO PANAMERICANA SUCURSAL COCHABAMBA",
+			"direccion": "COCHABAMBA - AVENIDA TADEO HAENKE ESQ. CALLE ISMAEL CESPEDES S/N",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3213,
+			"id_entidad": 49505,
+			"latitud": -16.99313,
+			"longitud": -65.213188,
+			"nombreEstacion": "INVERSIONES Y SERVICIOS TRUJILLO ORELLANA S.R.L.",
+			"direccion": "AV. PANAMERICANA L.C LAUCA NRO. S/N ZONA LAUCA EÑE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2522,
+			"id_entidad": 50330,
+			"latitud": -17.39682,
+			"longitud": -66.2035,
+			"nombreEstacion": "ESTACION DE SERVICIO CAPITAN VICTOR USTARIZ",
+			"direccion": "AVENIDA CAPITAN USTARIZ KM. 51/2 NRO S/N ZONA COÑA COÑA SUD",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3213,
+			"id_entidad": 49505,
+			"latitud": -16.99313,
+			"longitud": -65.213188,
+			"nombreEstacion": "INVERSIONES Y SERVICIOS TRUJILLO ORELLANA S.R.L.",
+			"direccion": "AV. PANAMERICANA L.C LAUCA NRO. S/N ZONA LAUCA EÑE",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 3211,
+			"id_entidad": 47967,
+			"latitud": -17.37278,
+			"longitud": -66.11232,
+			"nombreEstacion": "GUADELOUPE GROUP S.R.L.",
+			"direccion": "SACABA-AV. CIRCUNVALACION Nro S/N UV. S/N MZO. 8 ZONA MESADILLA",
+			"id_departamento": 3
+		},
+		{
+			"id_eess_saldo": 2522,
+			"id_entidad": 50330,
+			"latitud": -17.39682,
+			"longitud": -66.2035,
+			"nombreEstacion": "ESTACION DE SERVICIO CAPITAN VICTOR USTARIZ",
+			"direccion": "AVENIDA CAPITAN USTARIZ KM. 51/2 NRO S/N ZONA COÑA COÑA SUD",
+			"id_departamento": 3
+		}
+	]
+}

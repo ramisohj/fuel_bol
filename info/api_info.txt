@@ -1,0 +1,45 @@
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+
+Get Request Sample (Getting all service stations for Cochabamba about gasoline data):
+GET: https://vsr11vpr08m22gb.anh.gob.bo:9443/WSMobile/v1/EstacionesXprod/F761D63AC28406573E20A24CB1DB2EC6/3/0
+
+
+WHERE:
+
+API: "https://vsr11vpr08m22gb.anh.gob.bo:9443/WSMobile/v1/EstacionesXprod/F761D63AC28406573E20A24CB1DB2EC6/{REGION}/{FUEL_TYPE}"
+REGION: {[1 - 9]}
+		1 = "CHUQUISACA"
+		2 = "LA PAZ"
+		3 = "COCHABAMBA"
+		4 = "ORURO"
+		5 = "POTOSI"
+		6 = "TARIJA"
+		7 = "SANTA CRUZ"
+		8 = "BENI"
+		9 = "PANDO"
+FUEL_TYPE: {[0 - 3]}
+		0 = "GASOLINA"
+		1 = "DIESEL"
+		2 = "GASOLINA PREMIUM"
+		3 = "DIESEL ULS"
+		
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+
+Get request Sample (Getting fuel data by service stattion, gasoline data)
+GET: https://vsr11vpr08m22gb.anh.gob.bo:9443/WSMobile/v1/EstacionesSaldo/F761D63AC28406573E20A24CB1DB2EC6/2913/0
+
+
+WHERE: 
+
+API: "https://vsr11vpr08m22gb.anh.gob.bo:9443/WSMobile/v1/EstacionesSaldo/F761D63AC28406573E20A24CB1DB2EC6/{ID_SE}/{FUEL_TYPE}"
+ID_SE: Service Stattion ID
+FUEL_TYPE: {[0 - 3]}
+		0 = "GASOLINA"
+		1 = "DIESEL"
+		2 = "GASOLINA PREMIUM"
+		3 = "DIESEL ULS"
+
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
