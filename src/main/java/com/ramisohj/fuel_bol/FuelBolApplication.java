@@ -1,13 +1,18 @@
 package com.ramisohj.fuel_bol;
 
+import com.ramisohj.fuel_bol.service.O2306Service;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
+@EnableScheduling
 public class FuelBolApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FuelBolApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(FuelBolApplication.class, args);
+		context.getBean(O2306Service.class);
 	}
 
 }
