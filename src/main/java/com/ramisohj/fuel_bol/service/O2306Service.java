@@ -14,14 +14,15 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Service
 public class O2306Service {
 
     private final RestTemplate restTemplate;
     private final O2306Repository repository;
 
-    @Value("${api.anh.estacion-saldo}")
-    private String apiAnhEstacionSaldo;
+    @Value("${api.anh.fuel-station.level}")
+    private String apiAnhStationLevel;
 
     public O2306Service(O2306Repository repository) {
         this.restTemplate = new RestTemplate();
@@ -30,7 +31,7 @@ public class O2306Service {
 
     @Scheduled(fixedRate = 600000) // Runs every 10 minutes
     public void fetchDataFromApi() {
-        String apiUrl = apiAnhEstacionSaldo + "/2306/0";
+        String apiUrl = apiAnhStationLevel + "/2306/0";
         ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
 
         if (response.getStatusCode().is2xxSuccessful()) {

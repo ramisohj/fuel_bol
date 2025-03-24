@@ -1,0 +1,17 @@
+OLD_NAMES = NEW_NAMES
+
+id_eess_saldo = id_fuel_station (fuel station)
+id_entidad = id_entity
+id_producto_bsa = id_product_bsa
+id_producto_hydro = id_product_hydro
+latitud = location
+longitud = location
+nombreEstacion = fuel_station_name (fuel station name)
+direccion = direction
+id_departamento = id_department
+saldo_octano = level_octane
+saldo_bsa = level_bsa
+saldo_planta = level_plant
+decCodigo = dec_code
+strMensaje = str_message
+oResultado = o_result

@@ -12,6 +12,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+
 @Entity
 @Table(name = "oresultado_2306")
 @Getter
