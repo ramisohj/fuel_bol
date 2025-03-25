@@ -1,6 +1,11 @@
 package com.ramisohj.fuel_bol.service;
 
-import com.ramisohj.fuel_bol.model.*;
+
+import com.ramisohj.fuel_bol.model.DepartmentCode;
+import com.ramisohj.fuel_bol.model.FuelCode;
+import com.ramisohj.fuel_bol.model.FuelMonitoring;
+import com.ramisohj.fuel_bol.model.FuelStation;
+import com.ramisohj.fuel_bol.model.FuelTank;
 import com.ramisohj.fuel_bol.repository.FuelMonitoringRepository;
 import com.ramisohj.fuel_bol.repository.FuelStationRepository;
 import com.ramisohj.fuel_bol.repository.FuelTankRepository;
@@ -34,11 +39,12 @@ public class FuelMonitoringService {
         this.restTemplate = new RestTemplate();
     }
 
-    @Scheduled(fixedRate = 600000) // Runs every 10 minutes
+    @Scheduled(cron = "0 0/10 * * * *") // Runs every 10 minutes
     public void monitorFuelStations() {
 
         List<FuelStation> fuelStations = fuelStationRepository.findFuelStationsByIdDepartment(DepartmentCode.COCHABAMBA.ordinal());
         FuelMonitoring fuelMonitoring = saveMonitoring();
+        System.out.println("✅ Monitoring record saved at: " + fuelMonitoring.getCreatedAt());
 
         for (FuelStation fuelStation : fuelStations) {
             for (FuelCode fuelCode : FuelCode.values()) {
@@ -58,7 +64,6 @@ public class FuelMonitoringService {
         FuelMonitoring fuelMonitoring = new FuelMonitoring();
         fuelMonitoring.setMonitoringAt(LocalDateTime.now());
         fuelMonitoring.setCreatedAt(LocalDateTime.now());
-
         return fuelMonitoringRepository.save(fuelMonitoring);
     }
 
@@ -93,11 +98,12 @@ public class FuelMonitoringService {
                 }
 
                 fuelTankRepository.saveAll(dataList);
-                System.out.println("✅ Data Monitoring with date saved successfully!");
+                System.out.println("✅ Fuel tank list saved successfully!");
+                System.out.println("Fuel tank list saved at: " + LocalDateTime.now());
 
             }
         } else {
-            System.out.println("Error: oResultado is missing or null");
+            System.out.println("WARNING: oResultado is missing or null (no records) at: " + LocalDateTime.now());
         }
     }
 }

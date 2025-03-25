@@ -109,7 +109,7 @@ public class FuelStationService {
                                         LocalDateTime.now()
                                 );
                             } catch (Exception e) {
-                                System.out.println("Error processing object: " + obj);
+                                System.out.println("Error processing object: " + obj + ", date: " + LocalDateTime.now());
                                 e.printStackTrace();
                                 return null;
                             }
