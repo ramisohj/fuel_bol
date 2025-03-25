@@ -29,8 +29,8 @@ public class FuelStationService {
     private String apiFuelStationList;
 
     @Autowired
-    public FuelStationService(FuelStationRepository repository) {
-        this.fuelStationRepository = repository;
+    public FuelStationService(FuelStationRepository fuelStationRepository) {
+        this.fuelStationRepository = fuelStationRepository;
     }
 
     @Transactional
