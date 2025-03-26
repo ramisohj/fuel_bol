@@ -52,8 +52,8 @@ public class FuelStationService {
     }
 
     @Transactional
-    public List<FuelStation> getFuelStationsByDept(Long id_dept) {
-        return fuelStationRepository.findFuelStationsByIdDepartment(id_dept);
+    public List<FuelStation> getFuelStationsByIdDepartment(Long idDepartment) {
+        return fuelStationRepository.findFuelStationsByIdDepartment(idDepartment);
     }
 
     @Transactional
