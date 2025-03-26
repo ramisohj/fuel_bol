@@ -31,15 +31,18 @@ public class FuelMonitoringService {
     @Value("${api.anh.fuel-station.level}")
     private String apiFuelStation;
     private final RestTemplate restTemplate;
+    private final FuelLevelService fuelLevelService;
 
-    public FuelMonitoringService(FuelMonitoringRepository fuelMonitoringRepository, FuelTankRepository fuelTankRepository, FuelStationRepository fuelStationRepository) {
+    public FuelMonitoringService(FuelMonitoringRepository fuelMonitoringRepository, FuelTankRepository fuelTankRepository, FuelStationRepository fuelStationRepository, FuelLevelService fuelLevelService) {
         this.fuelMonitoringRepository = fuelMonitoringRepository;
         this.fuelTankRepository = fuelTankRepository;
         this.fuelStationRepository = fuelStationRepository;
+        this.fuelLevelService = fuelLevelService;
         this.restTemplate = new RestTemplate();
     }
 
     @Scheduled(cron = "0 0/10 * * * *") // Runs every 10 minutes
+    @Transactional
     public void monitorFuelStations() {
 
         List<FuelStation> fuelStations = fuelStationRepository.findFuelStationsByIdDepartment(DepartmentCode.COCHABAMBA.ordinal());
@@ -57,6 +60,9 @@ public class FuelMonitoringService {
                 }
             }
         }
+
+        // populating fuel_levels table:
+        fuelLevelService.insertFuelLevels(fuelMonitoring.getIdMonitoring());
     }
 
     @Transactional
@@ -88,8 +94,8 @@ public class FuelMonitoringService {
                     fuelTank.setIdProductHydro(obj.getInt("id_producto_hydro"));
 
                     fuelTank.setFuelType(fuelCode.toString());
-                    fuelTank.setLevelOctane(obj.getInt("saldo_octano"));
                     fuelTank.setLevelBsa(obj.getInt("saldo_bsa"));
+                    fuelTank.setLevelOctane(obj.getInt("saldo_octano"));
                     fuelTank.setLevelPlant(obj.getInt("saldo_planta"));
 
                     fuelTank.setCreatedAt(LocalDateTime.now());

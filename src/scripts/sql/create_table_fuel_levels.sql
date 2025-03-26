@@ -1,14 +1,12 @@
---- LIST OF FUEL TANKS
+--- DATA ABOUT FUEL LEVELS FOR ALL FUEL STATIONS IN BOLIVIA
 
-CREATE TABLE fuel_tanks (
-    id_fuel_tank SERIAL PRIMARY KEY,
+CREATE TABLE fuel_levels (
+    id_fuel_level SERIAL PRIMARY KEY,
 
     id_monitoring INT NOT NULL,
     id_fuel_station INT NOT NULL,
-    id_entity INT NOT NULL,
-    id_product_bsa INT NOT NULL,
-    id_product_hydro INT NOT NULL,
 
+    monitoring_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     fuel_type VARCHAR(25) NOT NULL,
     level_bsa DOUBLE PRECISION NOT NULL,
     level_octane DOUBLE PRECISION NOT NULL,

@@ -2,6 +2,7 @@
 
 CREATE TABLE fuel_monitoring (
     id_monitoring SERIAL PRIMARY KEY,
+
     monitoring_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

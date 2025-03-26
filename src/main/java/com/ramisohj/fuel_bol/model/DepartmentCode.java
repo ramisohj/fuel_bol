@@ -6,6 +6,7 @@ import lombok.Getter;
 @Getter
 public enum DepartmentCode {
 
+    LITORAL(0, "LITORAL"),
     CHUQUISACA(1, "CHUQUISACA"),
     LA_PAZ(2, "LA PAZ"),
     COCHABAMBA(3, "COCHABAMBA"),

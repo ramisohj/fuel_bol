@@ -14,21 +14,19 @@ import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name = "fuel_tanks")
+@Table(name = "fuel_levels")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class FuelTank {
+public class FuelLevel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idFuelTank;
+    private Long idFuelLevel;
     private Long idMonitoring;
     private int idFuelStation;
-    private int idEntity;
-    private int idProductBsa;
-    private int idProductHydro;
 
+    private LocalDateTime monitoringAt;
     private String fuelType;
     private double levelBsa;
     private double levelOctane;
