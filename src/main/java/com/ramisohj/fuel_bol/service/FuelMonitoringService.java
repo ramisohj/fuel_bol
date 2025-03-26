@@ -44,8 +44,8 @@ public class FuelMonitoringService {
     @Scheduled(cron = "0 0/10 * * * *") // Runs every 10 minutes
     @Transactional
     public void monitorFuelStations() {
-
-        List<FuelStation> fuelStations = fuelStationRepository.findFuelStationsByIdDepartment((long) DepartmentCode.COCHABAMBA.ordinal());
+        
+        List<FuelStation> fuelStations = fuelStationRepository.findAll();
         FuelMonitoring fuelMonitoring = saveMonitoring();
         System.out.println("✅ Monitoring record saved at: " + fuelMonitoring.getCreatedAt());
 
