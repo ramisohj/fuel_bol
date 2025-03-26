@@ -52,7 +52,7 @@ public class FuelStationService {
     }
 
     @Transactional
-    public List<FuelStation> getFuelStationsByDept(Integer id_dept) {
+    public List<FuelStation> getFuelStationsByDept(Long id_dept) {
         return fuelStationRepository.findFuelStationsByIdDepartment(id_dept);
     }
 
@@ -100,9 +100,9 @@ public class FuelStationService {
                                 ));
 
                                 return new FuelStation(
-                                        Integer.valueOf(obj.get("id_eess_saldo").toString()),
-                                        Integer.valueOf(obj.get("id_entidad").toString()),
-                                        Integer.valueOf(obj.get("id_departamento").toString()),
+                                        Long.valueOf(obj.get("id_eess_saldo").toString()),
+                                        Long.valueOf(obj.get("id_entidad").toString()),
+                                        Long.valueOf(obj.get("id_departamento").toString()),
                                         obj.get("nombreEstacion").toString(),
                                         obj.get("direccion").toString(),
                                         location,

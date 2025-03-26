@@ -8,8 +8,8 @@ import java.util.List;
 
 
 @Repository
-public interface FuelStationRepository extends JpaRepository<FuelStation, Integer> {
+public interface FuelStationRepository extends JpaRepository<FuelStation, Long> {
 
-    List<FuelStation> findFuelStationsByIdDepartment(Integer dept);
+    List<FuelStation> findFuelStationsByIdDepartment(Long dept);
 
 }

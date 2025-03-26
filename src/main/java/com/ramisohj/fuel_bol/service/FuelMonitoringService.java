@@ -45,7 +45,7 @@ public class FuelMonitoringService {
     @Transactional
     public void monitorFuelStations() {
 
-        List<FuelStation> fuelStations = fuelStationRepository.findFuelStationsByIdDepartment(DepartmentCode.COCHABAMBA.ordinal());
+        List<FuelStation> fuelStations = fuelStationRepository.findFuelStationsByIdDepartment((long) DepartmentCode.COCHABAMBA.ordinal());
         FuelMonitoring fuelMonitoring = saveMonitoring();
         System.out.println("✅ Monitoring record saved at: " + fuelMonitoring.getCreatedAt());
 
@@ -88,8 +88,8 @@ public class FuelMonitoringService {
                     FuelTank fuelTank = new FuelTank();
 
                     fuelTank.setIdMonitoring(fuelMonitoring.getIdMonitoring());
-                    fuelTank.setIdFuelStation(obj.getInt("id_eess"));
-                    fuelTank.setIdEntity(obj.getInt("id_entidad"));
+                    fuelTank.setIdFuelStation(obj.getLong("id_eess"));
+                    fuelTank.setIdEntity(obj.getLong("id_entidad"));
                     fuelTank.setIdProductBsa(obj.getInt("id_producto_bsa"));
                     fuelTank.setIdProductHydro(obj.getInt("id_producto_hydro"));
 

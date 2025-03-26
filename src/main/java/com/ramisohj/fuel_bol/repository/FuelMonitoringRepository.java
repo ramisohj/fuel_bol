@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface FuelMonitoringRepository extends JpaRepository<FuelMonitoring, Integer> {
+public interface FuelMonitoringRepository extends JpaRepository<FuelMonitoring, Long> {
 }

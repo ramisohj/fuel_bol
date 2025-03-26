@@ -22,9 +22,9 @@ import java.time.LocalDateTime;
 public class FuelStation {
 
     @Id
-    private Integer idFuelStation;
-    private Integer idEntity;
-    private Integer idDepartment;
+    private Long idFuelStation;
+    private Long idEntity;
+    private Long idDepartment;
     private String fuelStationName;
     private String direction;
     @Column(columnDefinition = "geometry(Point, 4326)")

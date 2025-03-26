@@ -24,7 +24,7 @@ public class FuelLevel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idFuelLevel;
     private Long idMonitoring;
-    private int idFuelStation;
+    private Long idFuelStation;
 
     private LocalDateTime monitoringAt;
     private String fuelType;

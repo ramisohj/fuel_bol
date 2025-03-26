@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface FuelTankRepository extends JpaRepository<FuelTank, Integer> {
+public interface FuelTankRepository extends JpaRepository<FuelTank, Long> {
 }

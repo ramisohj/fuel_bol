@@ -30,7 +30,7 @@ public class FuelStationController {
     }
 
     @GetMapping("/list/by-department/{idDept}")
-    public ResponseEntity<List<FuelStation>> getFuelStationsByDept(@PathVariable Integer idDept) {
+    public ResponseEntity<List<FuelStation>> getFuelStationsByDept(@PathVariable Long idDept) {
         List<FuelStation> fuelStations = fuelStationService.getFuelStationsByDept(idDept);
         return ResponseEntity.ok(fuelStations);
     }

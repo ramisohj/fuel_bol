@@ -24,8 +24,8 @@ public class FuelTank {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idFuelTank;
     private Long idMonitoring;
-    private int idFuelStation;
-    private int idEntity;
+    private Long idFuelStation;
+    private Long idEntity;
     private int idProductBsa;
     private int idProductHydro;
 
