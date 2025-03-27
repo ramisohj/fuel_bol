@@ -1,7 +1,6 @@
 package com.ramisohj.fuel_bol.service;
 
 
-import com.ramisohj.fuel_bol.model.DepartmentCode;
 import com.ramisohj.fuel_bol.model.FuelCode;
 import com.ramisohj.fuel_bol.model.FuelMonitoring;
 import com.ramisohj.fuel_bol.model.FuelStation;
@@ -21,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Service
 public class FuelMonitoringService {
@@ -44,25 +44,30 @@ public class FuelMonitoringService {
     @Scheduled(cron = "0 0/10 * * * *") // Runs every 10 minutes
     @Transactional
     public void monitorFuelStations() {
-        
-        List<FuelStation> fuelStations = fuelStationRepository.findAll();
-        FuelMonitoring fuelMonitoring = saveMonitoring();
-        System.out.println("✅ Monitoring record saved at: " + fuelMonitoring.getCreatedAt());
+        try {
+            List<FuelStation> fuelStations = fuelStationRepository.findAll();
+            FuelMonitoring fuelMonitoring = saveMonitoring();
+            System.out.println("✅ Monitoring record saved at: " + fuelMonitoring.getCreatedAt());
 
-        for (FuelStation fuelStation : fuelStations) {
-            for (FuelCode fuelCode : FuelCode.values()) {
-                String apiUrl = apiFuelStation+"/"+fuelStation.getIdFuelStation()+"/"+fuelCode.ordinal();
+            for (FuelStation fuelStation : fuelStations) {
+                for (FuelCode fuelCode : FuelCode.values()) {
+                    String apiUrl = apiFuelStation+"/"+fuelStation.getIdFuelStation()+"/"+fuelCode.ordinal();
 
-                ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
+                    ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
 
-                if (response.getStatusCode().is2xxSuccessful()) {
-                    saveFuelTanks(response.getBody(), fuelMonitoring, fuelCode);
+                    if (response.getStatusCode().is2xxSuccessful()) {
+                        saveFuelTanks(response.getBody(), fuelMonitoring, fuelCode);
+                    }
                 }
             }
+
+            // populating fuel_levels table:
+            fuelLevelService.insertFuelLevels(fuelMonitoring.getIdMonitoring());
+        } catch (Exception e) {
+            System.err.println("Error in scheduled task monitorFuelStations: " + e.getMessage());
+            System.err.println("Error in monitorFuelStations method at: " + LocalDateTime.now());
         }
 
-        // populating fuel_levels table:
-        fuelLevelService.insertFuelLevels(fuelMonitoring.getIdMonitoring());
     }
 
     @Transactional
