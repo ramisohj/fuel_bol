@@ -1,11 +1,15 @@
 package com.ramisohj.fuel_bol.service;
 
+
 import com.ramisohj.fuel_bol.model.DepartmentCode;
 import com.ramisohj.fuel_bol.model.FuelCode;
+import com.ramisohj.fuel_bol.model.FuelStation;
+import com.ramisohj.fuel_bol.model.GeojsonPoint;
+import com.ramisohj.fuel_bol.model.GeojsonPointList;
+import com.ramisohj.fuel_bol.util.GeojsonLoader;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
-import com.ramisohj.fuel_bol.model.FuelStation;
 import com.ramisohj.fuel_bol.repository.FuelStationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -62,7 +66,7 @@ public class FuelStationService {
     }
 
     @Transactional
-    public List<FuelStation> getFuelStationsFromDB() {
+    public List<FuelStation> getFuelStationsList() {
         return fuelStationRepository.findAll();
     }
 
@@ -125,5 +129,15 @@ public class FuelStationService {
             }
         }
         return FuelStations;
+    }
+
+    @Transactional
+    public GeojsonPoint getGeojsonPointFuelStation(long idFuelStation) {
+        return GeojsonLoader.generateFuelStation(getFuelStationById(idFuelStation));
+    }
+
+    @Transactional
+    public GeojsonPointList getGeojsonPointFuelStationList() {
+        return GeojsonLoader.generateFuelStationList(getFuelStationsList());
     }
 }

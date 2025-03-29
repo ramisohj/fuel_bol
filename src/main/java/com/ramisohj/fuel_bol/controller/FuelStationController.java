@@ -1,6 +1,8 @@
 package com.ramisohj.fuel_bol.controller;
 
 import com.ramisohj.fuel_bol.model.FuelStation;
+import com.ramisohj.fuel_bol.model.GeojsonPoint;
+import com.ramisohj.fuel_bol.model.GeojsonPointList;
 import com.ramisohj.fuel_bol.service.FuelStationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +33,7 @@ public class FuelStationController {
 
     @GetMapping("/list")
     public ResponseEntity<List<FuelStation>> findAll() {
-        List<FuelStation> fuelStations = fuelStationService.getFuelStationsFromDB();
+        List<FuelStation> fuelStations = fuelStationService.getFuelStationsList();
         return ResponseEntity.ok(fuelStations);
     }
 
@@ -54,4 +56,17 @@ public class FuelStationController {
             return ResponseEntity.internalServerError().build();
         }
     }
+
+    @GetMapping("/geojson/{idFuelStation}")
+    public ResponseEntity<GeojsonPoint> getGeojsonFuelStationById(@PathVariable long idFuelStation) {
+        GeojsonPoint fuelStationGeojsonPoint = fuelStationService.getGeojsonPointFuelStation(idFuelStation);
+        return ResponseEntity.ok(fuelStationGeojsonPoint);
+    }
+
+    @GetMapping("/geojson/list")
+    public ResponseEntity<GeojsonPointList> getGeojsonFuelStationList() {
+        GeojsonPointList fuelStationGeojsonPointList = fuelStationService.getGeojsonPointFuelStationList();
+        return ResponseEntity.ok(fuelStationGeojsonPointList);
+    }
+
 }
