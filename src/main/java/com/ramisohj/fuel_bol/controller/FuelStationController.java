@@ -4,6 +4,8 @@ import com.ramisohj.fuel_bol.model.FuelStation;
 import com.ramisohj.fuel_bol.model.GeojsonPoint;
 import com.ramisohj.fuel_bol.model.GeojsonPointList;
 import com.ramisohj.fuel_bol.service.FuelStationService;
+import com.ramisohj.fuel_bol.model.JsonPoint;
+import com.ramisohj.fuel_bol.model.JsonPointList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -68,6 +70,18 @@ public class FuelStationController {
     public ResponseEntity<Map<String, Object>> getGeojsonFuelStationList() {
         GeojsonPointList fuelStationGeojsonPointList = fuelStationService.getGeojsonPointFuelStationList();
         return ResponseEntity.ok(fuelStationGeojsonPointList.getGeojsonPointList());
+    }
+
+    @GetMapping("/json/{idFuelStation}")
+    public ResponseEntity<Map<String, Object>> getJsonFuelStationById(@PathVariable long idFuelStation) {
+        JsonPoint fuelStationJsonPoint = fuelStationService.getJsonPointFuelStation(idFuelStation);
+        return ResponseEntity.ok(fuelStationJsonPoint.getJsonPoint());
+    }
+
+    @GetMapping("/json/list")
+    public ResponseEntity<List<Map<String, Object>>> getJsonFuelStationList() {
+        JsonPointList fuelStationJsonPointList = fuelStationService.getJsonPointFuelStationList();
+        return ResponseEntity.ok(fuelStationJsonPointList.getGeojsonPointList());
     }
 
 }

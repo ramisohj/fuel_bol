@@ -6,7 +6,10 @@ import com.ramisohj.fuel_bol.model.FuelCode;
 import com.ramisohj.fuel_bol.model.FuelStation;
 import com.ramisohj.fuel_bol.model.GeojsonPoint;
 import com.ramisohj.fuel_bol.model.GeojsonPointList;
+import com.ramisohj.fuel_bol.model.JsonPoint;
+import com.ramisohj.fuel_bol.model.JsonPointList;
 import com.ramisohj.fuel_bol.util.GeojsonLoader;
+import com.ramisohj.fuel_bol.util.JsonLoader;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
@@ -139,5 +142,15 @@ public class FuelStationService {
     @Transactional
     public GeojsonPointList getGeojsonPointFuelStationList() {
         return GeojsonLoader.generateFuelStationList(getFuelStationsList());
+    }
+
+    @Transactional
+    public JsonPoint getJsonPointFuelStation(long idFuelStation) {
+        return JsonLoader.generateFuelStation(getFuelStationById(idFuelStation));
+    }
+
+    @Transactional
+    public JsonPointList getJsonPointFuelStationList() {
+        return JsonLoader.generateFuelStationList(getFuelStationsList());
     }
 }
