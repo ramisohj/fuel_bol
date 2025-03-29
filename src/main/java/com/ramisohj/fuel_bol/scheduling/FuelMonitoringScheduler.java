@@ -1,4 +1,4 @@
-package com.ramisohj.fuel_bol.service;
+package com.ramisohj.fuel_bol.scheduling;
 
 
 import com.ramisohj.fuel_bol.model.FuelCode;
@@ -8,22 +8,24 @@ import com.ramisohj.fuel_bol.model.FuelTank;
 import com.ramisohj.fuel_bol.repository.FuelMonitoringRepository;
 import com.ramisohj.fuel_bol.repository.FuelStationRepository;
 import com.ramisohj.fuel_bol.repository.FuelTankRepository;
+import com.ramisohj.fuel_bol.service.FuelLevelService;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 
-@Service
-public class FuelMonitoringService {
+@Component
+public class FuelMonitoringScheduler {
 
     private final FuelMonitoringRepository fuelMonitoringRepository;
     private final FuelTankRepository fuelTankRepository;
@@ -32,8 +34,9 @@ public class FuelMonitoringService {
     private String apiFuelStation;
     private final RestTemplate restTemplate;
     private final FuelLevelService fuelLevelService;
+    private final AtomicReference<LocalDateTime> lastExecutionTime = new AtomicReference<>(LocalDateTime.now());
 
-    public FuelMonitoringService(FuelMonitoringRepository fuelMonitoringRepository, FuelTankRepository fuelTankRepository, FuelStationRepository fuelStationRepository, FuelLevelService fuelLevelService) {
+    public FuelMonitoringScheduler(FuelMonitoringRepository fuelMonitoringRepository, FuelTankRepository fuelTankRepository, FuelStationRepository fuelStationRepository, FuelLevelService fuelLevelService) {
         this.fuelMonitoringRepository = fuelMonitoringRepository;
         this.fuelTankRepository = fuelTankRepository;
         this.fuelStationRepository = fuelStationRepository;
@@ -45,18 +48,24 @@ public class FuelMonitoringService {
     @Transactional
     public void monitorFuelStations() {
         try {
+            lastExecutionTime.set(LocalDateTime.now()); // Update last run time
+
             List<FuelStation> fuelStations = fuelStationRepository.findAll();
             FuelMonitoring fuelMonitoring = saveMonitoring();
             System.out.println("✅ Monitoring record saved at: " + fuelMonitoring.getCreatedAt());
 
             for (FuelStation fuelStation : fuelStations) {
                 for (FuelCode fuelCode : FuelCode.values()) {
-                    String apiUrl = apiFuelStation+"/"+fuelStation.getIdFuelStation()+"/"+fuelCode.ordinal();
+                    String fuelStationUrl = "/" + fuelStation.getIdFuelStation() + "/"+fuelCode.ordinal();
+                    String apiUrl = apiFuelStation + fuelStationUrl;
 
                     ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
 
                     if (response.getStatusCode().is2xxSuccessful()) {
-                        saveFuelTanks(response.getBody(), fuelMonitoring, fuelCode);
+                        saveFuelTanks(response.getBody(), fuelMonitoring, fuelCode, fuelStationUrl);
+                    } else {
+                        System.out.println("WARNING: response not success at: " + LocalDateTime.now() +
+                                "; fuel_station_url: " + fuelStationUrl);
                     }
                 }
             }
@@ -64,8 +73,8 @@ public class FuelMonitoringService {
             // populating fuel_levels table:
             fuelLevelService.insertFuelLevels(fuelMonitoring.getIdMonitoring());
         } catch (Exception e) {
-            System.err.println("Error in scheduled task monitorFuelStations: " + e.getMessage());
-            System.err.println("Error in monitorFuelStations method at: " + LocalDateTime.now());
+            System.out.println("ERROR: monitorFuelStations at: " + LocalDateTime.now());
+            e.printStackTrace();
         }
 
     }
@@ -79,7 +88,7 @@ public class FuelMonitoringService {
     }
 
     @Transactional
-    protected void saveFuelTanks(String jsonResponse, FuelMonitoring fuelMonitoring, FuelCode fuelCode) {
+    protected void saveFuelTanks(String jsonResponse, FuelMonitoring fuelMonitoring, FuelCode fuelCode,String fuelStationUrl) {
         JSONObject jsonObject = new JSONObject(jsonResponse);
 
         if (jsonObject.has("oResultado") && !jsonObject.isNull("oResultado")) {
@@ -109,12 +118,20 @@ public class FuelMonitoringService {
                 }
 
                 fuelTankRepository.saveAll(dataList);
-                System.out.println("✅ Fuel tank list saved successfully!");
-                System.out.println("Fuel tank list saved at: " + LocalDateTime.now());
+                System.out.println("Fuel tank list SUCCESSFULLY saved at: " + LocalDateTime.now() +
+                        "; fuel_station_url: " + fuelStationUrl);
 
+            } else {
+                System.out.println("Fuel tank list EMPTY at: " + LocalDateTime.now() +
+                        "; fuel_station_url: " + fuelStationUrl);
             }
         } else {
-            System.out.println("WARNING: oResultado is missing or null (no records) at: " + LocalDateTime.now());
+            System.out.println("WARNING: oResultado is missing or null (no records) at: " + LocalDateTime.now() +
+                    "; fuel_station_url: " + fuelStationUrl);
         }
+    }
+
+    public LocalDateTime getLastExecutionTime() {
+        return lastExecutionTime.get();
     }
 }
