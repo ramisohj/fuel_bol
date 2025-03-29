@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -58,15 +59,15 @@ public class FuelStationController {
     }
 
     @GetMapping("/geojson/{idFuelStation}")
-    public ResponseEntity<GeojsonPoint> getGeojsonFuelStationById(@PathVariable long idFuelStation) {
+    public ResponseEntity<Map<String, Object>> getGeojsonFuelStationById(@PathVariable long idFuelStation) {
         GeojsonPoint fuelStationGeojsonPoint = fuelStationService.getGeojsonPointFuelStation(idFuelStation);
-        return ResponseEntity.ok(fuelStationGeojsonPoint);
+        return ResponseEntity.ok(fuelStationGeojsonPoint.getGeojsonPoint());
     }
 
     @GetMapping("/geojson/list")
-    public ResponseEntity<GeojsonPointList> getGeojsonFuelStationList() {
+    public ResponseEntity<Map<String, Object>> getGeojsonFuelStationList() {
         GeojsonPointList fuelStationGeojsonPointList = fuelStationService.getGeojsonPointFuelStationList();
-        return ResponseEntity.ok(fuelStationGeojsonPointList);
+        return ResponseEntity.ok(fuelStationGeojsonPointList.getGeojsonPointList());
     }
 
 }

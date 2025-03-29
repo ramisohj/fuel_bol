@@ -41,8 +41,9 @@ public class GeojsonPoint {
         Point geometryPoint = (Point) reader.read(point);
         addGeometry(geometryPoint);
     }
-     public Map<String, Object> getGeojsonPoint(){
+
+    public Map<String, Object> getGeojsonPoint(){
         feature.put("properties", properties);
         return feature;
-     }
+    }
 }

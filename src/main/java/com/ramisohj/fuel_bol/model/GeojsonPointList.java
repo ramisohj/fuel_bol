@@ -30,4 +30,5 @@ public class GeojsonPointList {
         featureCollection.put("features", features);
         return new JSONObject(featureCollection);
     }
+
 }
