@@ -23,6 +23,12 @@ public class FuelStationController {
         this.fuelStationService = service;
     }
 
+    @GetMapping("/{idFuelStation}")
+    public ResponseEntity<FuelStation> getFuelStationById(@PathVariable long idFuelStation) {
+        FuelStation fuelStation = fuelStationService.getFuelStationById(idFuelStation);
+        return ResponseEntity.ok(fuelStation);
+    }
+
     @GetMapping("/list")
     public ResponseEntity<List<FuelStation>> findAll() {
         List<FuelStation> fuelStations = fuelStationService.getFuelStationsFromDB();

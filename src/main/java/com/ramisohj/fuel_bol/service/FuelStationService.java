@@ -34,6 +34,11 @@ public class FuelStationService {
     }
 
     @Transactional
+    public FuelStation getFuelStationById(long idFuelStation) {
+        return fuelStationRepository.findById(idFuelStation).orElse(null);
+    }
+
+    @Transactional
     public List<FuelStation> saveUniqueFuelStation(List<FuelStation> stations) {
 
         List<FuelStation> savedFuelStations = new ArrayList<>();
