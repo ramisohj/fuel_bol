@@ -61,14 +61,14 @@ public class FuelStationController {
     }
 
     @GetMapping("/geojson")
-    public ResponseEntity<Map<String, Object>> getGeojsonFuelStationList() {
-        GeojsonPointList fuelStationGeojsonPointList = fuelStationService.getGeojsonPointFuelStationList();
+    public ResponseEntity<Map<String, Object>> getGeoFuelStationList() {
+        GeojsonPointList fuelStationGeojsonPointList = fuelStationService.getGeoPointFuelStationList();
         return ResponseEntity.ok(fuelStationGeojsonPointList.getGeojsonPointList());
     }
 
     @GetMapping("/geojson/{idFuelStation}")
-    public ResponseEntity<Map<String, Object>> getGeojsonFuelStationById(@PathVariable long idFuelStation) {
-        GeojsonPoint fuelStationGeojsonPoint = fuelStationService.getGeojsonPointFuelStation(idFuelStation);
+    public ResponseEntity<Map<String, Object>> getGeoFuelStationById(@PathVariable long idFuelStation) {
+        GeojsonPoint fuelStationGeojsonPoint = fuelStationService.getGeoPointFuelStation(idFuelStation);
         return ResponseEntity.ok(fuelStationGeojsonPoint.getGeojsonPoint());
     }
 

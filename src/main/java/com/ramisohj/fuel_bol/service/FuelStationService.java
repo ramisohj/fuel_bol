@@ -7,9 +7,9 @@ import com.ramisohj.fuel_bol.model.GeojsonPoint;
 import com.ramisohj.fuel_bol.model.GeojsonPointList;
 import com.ramisohj.fuel_bol.model.JsonPoint;
 import com.ramisohj.fuel_bol.model.JsonPointList;
-import com.ramisohj.fuel_bol.util.GeojsonLoader;
-import com.ramisohj.fuel_bol.util.JsonLoader;
 
+import com.ramisohj.fuel_bol.util.GeoLoader;
+import com.ramisohj.fuel_bol.util.JsonLoader;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.LinkedHashMap;
 
 
 @Service
@@ -135,63 +134,23 @@ public class FuelStationService {
     }
 
     @Transactional
-    public GeojsonPoint getGeojsonPointFuelStation(long idFuelStation) {
-        FuelStation fuelStation = getFuelStationById(idFuelStation);
-        Map<String, Object> properties = getFuelStationGeojsonProperties(fuelStation);
-        return GeojsonLoader.generateGeojsonPoint(properties);
+    public GeojsonPoint getGeoPointFuelStation(long idFuelStation) {
+        return GeoLoader.generateGeojsonPoint(getFuelStationById(idFuelStation));
     }
 
     @Transactional
-    public GeojsonPointList getGeojsonPointFuelStationList() {
-        List<FuelStation> fuelStationList = getFuelStationsList();
-        List<Map<String, Object>> propertiesList = new ArrayList<>();
-        for (FuelStation fuelStation : fuelStationList) {
-            Map<String, Object> properties = getFuelStationGeojsonProperties(fuelStation);
-            propertiesList.add(properties);
-        }
-        return GeojsonLoader.generateGeojsonPointList(propertiesList);
-    }
-
-    private Map<String, Object> getFuelStationGeojsonProperties(FuelStation fuelStation) {
-        Map<String, Object> properties = new LinkedHashMap<>();
-        properties.put("idFuelStation", fuelStation.getIdFuelStation());
-        properties.put("idEntity", fuelStation.getIdEntity());
-        properties.put("idDepartment", fuelStation.getIdDepartment());
-        properties.put("fuelStationName", fuelStation.getFuelStationName());
-        properties.put("direction", fuelStation.getDirection());
-        properties.put("createdAt", fuelStation.getCreatedAt());
-        return properties;
+    public GeojsonPointList getGeoPointFuelStationList() {
+        return GeoLoader.generateGeojsonPointList(getFuelStationsList());
     }
 
     @Transactional
     public JsonPoint getJsonPointFuelStation(long idFuelStation) {
-        FuelStation fuelStation = getFuelStationById(idFuelStation);
-        Map<String, Object> properties = getFuelStationJsonProperties(fuelStation);
-        return JsonLoader.generateJsonPoint(properties);
+        return JsonLoader.jsonPointFuelStationLevels(getFuelStationById(idFuelStation));
     }
 
     @Transactional
     public JsonPointList getJsonPointFuelStationList() {
-        List<FuelStation> fuelStationList = getFuelStationsList();
-        List<Map<String, Object>> propertiesList = new ArrayList<>();
-        for (FuelStation fuelStation : fuelStationList) {
-            Map<String, Object> properties = getFuelStationJsonProperties(fuelStation);
-            propertiesList.add(properties);
-        }
-        return JsonLoader.generateJsonPointList(propertiesList);
-    }
-
-    private Map<String, Object> getFuelStationJsonProperties(FuelStation fuelStation) {
-        Map<String, Object> properties = new LinkedHashMap<>();
-        properties.put("idFuelStation", fuelStation.getIdFuelStation());
-        properties.put("idEntity", fuelStation.getIdEntity());
-        properties.put("idDepartment", fuelStation.getIdDepartment());
-        properties.put("fuelStationName", fuelStation.getFuelStationName());
-        properties.put("direction", fuelStation.getDirection());
-        properties.put("longitude", fuelStation.getLocation().getX());
-        properties.put("latitude ", fuelStation.getLocation().getY());
-        properties.put("createdAt", fuelStation.getCreatedAt());
-        return properties;
+        return JsonLoader.jsonPointListFuelStation(getFuelStationsList());
     }
 
 }
