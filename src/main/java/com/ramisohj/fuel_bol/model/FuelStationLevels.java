@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.FieldNameConstants;
 import org.geolatte.geom.Point;
 
 
@@ -14,6 +15,7 @@ import java.sql.Timestamp;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@FieldNameConstants
 public class FuelStationLevels {
     private Long idMonitoring;
     private Long idFuelLevel;

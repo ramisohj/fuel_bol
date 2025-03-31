@@ -18,7 +18,7 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping("/api/fuel-station")
+@RequestMapping("/fuel-stations")
 public class FuelStationController {
 
     private final FuelStationService fuelStationService;
@@ -28,19 +28,19 @@ public class FuelStationController {
         this.fuelStationService = service;
     }
 
+    @GetMapping()
+    public ResponseEntity<List<FuelStation>> findAll() {
+        List<FuelStation> fuelStations = fuelStationService.getFuelStationsList();
+        return ResponseEntity.ok(fuelStations);
+    }
+
     @GetMapping("/{idFuelStation}")
     public ResponseEntity<FuelStation> getFuelStationById(@PathVariable long idFuelStation) {
         FuelStation fuelStation = fuelStationService.getFuelStationById(idFuelStation);
         return ResponseEntity.ok(fuelStation);
     }
 
-    @GetMapping("/list")
-    public ResponseEntity<List<FuelStation>> findAll() {
-        List<FuelStation> fuelStations = fuelStationService.getFuelStationsList();
-        return ResponseEntity.ok(fuelStations);
-    }
-
-    @GetMapping("/list/by-department/{idDept}")
+    @GetMapping("/by-department/{idDept}")
     public ResponseEntity<List<FuelStation>> getFuelStationsByDept(@PathVariable Long idDept) {
         List<FuelStation> fuelStations = fuelStationService.getFuelStationsByIdDepartment(idDept);
         return ResponseEntity.ok(fuelStations);
@@ -60,16 +60,16 @@ public class FuelStationController {
         }
     }
 
+    @GetMapping("/geojson")
+    public ResponseEntity<Map<String, Object>> getGeojsonFuelStationList() {
+        GeojsonPointList fuelStationGeojsonPointList = fuelStationService.getGeojsonPointFuelStationList();
+        return ResponseEntity.ok(fuelStationGeojsonPointList.getGeojsonPointList());
+    }
+
     @GetMapping("/geojson/{idFuelStation}")
     public ResponseEntity<Map<String, Object>> getGeojsonFuelStationById(@PathVariable long idFuelStation) {
         GeojsonPoint fuelStationGeojsonPoint = fuelStationService.getGeojsonPointFuelStation(idFuelStation);
         return ResponseEntity.ok(fuelStationGeojsonPoint.getGeojsonPoint());
-    }
-
-    @GetMapping("/geojson/list")
-    public ResponseEntity<Map<String, Object>> getGeojsonFuelStationList() {
-        GeojsonPointList fuelStationGeojsonPointList = fuelStationService.getGeojsonPointFuelStationList();
-        return ResponseEntity.ok(fuelStationGeojsonPointList.getGeojsonPointList());
     }
 
     @GetMapping("/json/{idFuelStation}")

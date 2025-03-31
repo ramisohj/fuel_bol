@@ -1,6 +1,5 @@
 package com.ramisohj.fuel_bol.service;
 
-
 import com.ramisohj.fuel_bol.model.DepartmentCode;
 import com.ramisohj.fuel_bol.model.FuelCode;
 import com.ramisohj.fuel_bol.model.FuelStation;
@@ -10,6 +9,7 @@ import com.ramisohj.fuel_bol.model.JsonPoint;
 import com.ramisohj.fuel_bol.model.JsonPointList;
 import com.ramisohj.fuel_bol.util.GeojsonLoader;
 import com.ramisohj.fuel_bol.util.JsonLoader;
+
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
@@ -77,7 +77,6 @@ public class FuelStationService {
     public List<FuelStation> getFuelStationsFromAPI() {
 
         List<FuelStation> FuelStations = new ArrayList<>();
-
         for(int deptCode = DepartmentCode.CHUQUISACA.ordinal(); deptCode<= DepartmentCode.PANDO.ordinal(); deptCode++) {
             for(int fuelCode = FuelCode.GASOLINE.ordinal(); fuelCode<=FuelCode.ULS_DIESEL.ordinal(); fuelCode++) {
                 RestTemplate restTemplate = new RestTemplate();

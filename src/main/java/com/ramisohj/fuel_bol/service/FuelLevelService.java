@@ -1,14 +1,18 @@
 package com.ramisohj.fuel_bol.service;
 
 import com.ramisohj.fuel_bol.model.FuelStationLevels;
-import com.ramisohj.fuel_bol.model.FuelStationLevelsDTO;
+import com.ramisohj.fuel_bol.model.JsonPointList;
+import com.ramisohj.fuel_bol.util.JsonLoader;
+
+import org.geolatte.geom.Point;
 import org.springframework.stereotype.Service;
 import com.ramisohj.fuel_bol.repository.FuelLevelRepository;
 import org.springframework.transaction.annotation.Transactional;
-import org.geolatte.geom.Point;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Map;
 
 
 @Service
@@ -25,39 +29,46 @@ public class FuelLevelService {
         fuelLevelRepository.insertFuelLevels(idMonitoring);
     }
 
-    @Transactional(readOnly = true)
-    public List<FuelStationLevelsDTO> getLatestFuelStationLevels() {
-        return fuelLevelRepository.findAllLatestFuelStationLevels().stream()
-                .map(this::convertToDTO)
-                .collect(Collectors.toList());
+    private Map<String, Object> getFuelStationLevelsJsonProperties(FuelStationLevels fuelStationLevels) {
+        Map<String, Object> properties = new LinkedHashMap<>();
+        properties.put(FuelStationLevels.Fields.idMonitoring, fuelStationLevels.getIdMonitoring());
+        properties.put(FuelStationLevels.Fields.idFuelLevel, fuelStationLevels.getIdFuelLevel());
+        properties.put(FuelStationLevels.Fields.idFuelStation ,fuelStationLevels.getIdFuelStation());
+        properties.put(FuelStationLevels.Fields.fuelStationName ,fuelStationLevels.getFuelStationName());
+        properties.put(FuelStationLevels.Fields.direction ,fuelStationLevels.getDirection());
+        properties.put(FuelStationLevels.Fields.location, getCoordinates(fuelStationLevels.getLocation()));
+        properties.put(FuelStationLevels.Fields.fuelType ,fuelStationLevels.getFuelType());
+        properties.put(FuelStationLevels.Fields.levelBsa ,fuelStationLevels.getLevelBsa());
+        properties.put(FuelStationLevels.Fields.monitoringAt ,fuelStationLevels.getMonitoringAt().toLocalDateTime());
+        return properties;
     }
 
     @Transactional(readOnly = true)
-    public List<FuelStationLevelsDTO> getLatestFuelStationLevelsByIdFuelStation(Long idFuelStation) {
-        return fuelLevelRepository.findAllLatestFuelStationLevelsByIdFuelStation(idFuelStation).stream()
-                .map(this::convertToDTO)
-                .collect(Collectors.toList());
+    public JsonPointList getLatestFuelStationLevels() {
+        List<FuelStationLevels> fuelStationList = fuelLevelRepository.findAllLatestFuelStationLevels();
+        return getJsonPointList(fuelStationList);
     }
 
-    private FuelStationLevelsDTO convertToDTO(FuelStationLevels fuelStationLevels) {
-        return new FuelStationLevelsDTO(
-                fuelStationLevels.getIdMonitoring(),
-                fuelStationLevels.getIdFuelLevel(),
-                fuelStationLevels.getIdFuelStation(),
-                fuelStationLevels.getFuelStationName(),
-                fuelStationLevels.getDirection(),
-                convertGeolatteToCoordinates(fuelStationLevels.getLocation()), // Convert Point
-                fuelStationLevels.getFuelType(),
-                fuelStationLevels.getLevelBsa(),
-                fuelStationLevels.getMonitoringAt().toLocalDateTime()
-        );
+    @Transactional(readOnly = true)
+    public JsonPointList getLatestFuelStationLevelsByIdFuelStation(Long idFuelStation) {
+        // TODO: add a check in order to avoid null list, if there is a empty list, so query the last success record
+        List<FuelStationLevels> fuelStationList = fuelLevelRepository.findAllLatestFuelStationLevelsByIdFuelStation(idFuelStation);
+        return getJsonPointList(fuelStationList);
     }
 
-    // Convert Geolatte Point to [longitude, latitude] array
-    private double[] convertGeolatteToCoordinates(Point<?> geolattePoint) {
-        if (geolattePoint == null) return null;
-        double longitude = geolattePoint.getPosition().getCoordinate(0);
-        double latitude = geolattePoint.getPosition().getCoordinate(1);
+    private JsonPointList getJsonPointList(List<FuelStationLevels> fuelStationList) {
+        List<Map<String, Object>> propertiesList = new ArrayList<>();
+        for (FuelStationLevels fuelStationLevels : fuelStationList) {
+            Map<String, Object> properties = getFuelStationLevelsJsonProperties(fuelStationLevels);
+            propertiesList.add(properties);
+        }
+        return JsonLoader.generateJsonPointList(propertiesList);
+    }
+
+    private double[] getCoordinates(Point point) {
+        if (point == null) return null;
+        double longitude = point.getPosition().getCoordinate(0);// longitude
+        double latitude = point.getPosition().getCoordinate(1);// latitude
         return new double[]{longitude, latitude};
     }
 }
