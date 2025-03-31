@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.LinkedHashMap;
 
 
 @Service
@@ -136,21 +137,62 @@ public class FuelStationService {
 
     @Transactional
     public GeojsonPoint getGeojsonPointFuelStation(long idFuelStation) {
-        return GeojsonLoader.generateFuelStation(getFuelStationById(idFuelStation));
+        FuelStation fuelStation = getFuelStationById(idFuelStation);
+        Map<String, Object> properties = getFuelStationGeojsonProperties(fuelStation);
+        return GeojsonLoader.generateGeojsonPoint(properties);
     }
 
     @Transactional
     public GeojsonPointList getGeojsonPointFuelStationList() {
-        return GeojsonLoader.generateFuelStationList(getFuelStationsList());
+        List<FuelStation> fuelStationList = getFuelStationsList();
+        List<Map<String, Object>> propertiesList = new ArrayList<>();
+        for (FuelStation fuelStation : fuelStationList) {
+            Map<String, Object> properties = getFuelStationGeojsonProperties(fuelStation);
+            propertiesList.add(properties);
+        }
+        return GeojsonLoader.generateGeojsonPointList(propertiesList);
+    }
+
+    private Map<String, Object> getFuelStationGeojsonProperties(FuelStation fuelStation) {
+        Map<String, Object> properties = new LinkedHashMap<>();
+        properties.put("idFuelStation", fuelStation.getIdFuelStation());
+        properties.put("idEntity", fuelStation.getIdEntity());
+        properties.put("idDepartment", fuelStation.getIdDepartment());
+        properties.put("fuelStationName", fuelStation.getFuelStationName());
+        properties.put("direction", fuelStation.getDirection());
+        properties.put("createdAt", fuelStation.getCreatedAt());
+        return properties;
     }
 
     @Transactional
     public JsonPoint getJsonPointFuelStation(long idFuelStation) {
-        return JsonLoader.generateFuelStation(getFuelStationById(idFuelStation));
+        FuelStation fuelStation = getFuelStationById(idFuelStation);
+        Map<String, Object> properties = getFuelStationJsonProperties(fuelStation);
+        return JsonLoader.generateJsonPoint(properties);
     }
 
     @Transactional
     public JsonPointList getJsonPointFuelStationList() {
-        return JsonLoader.generateFuelStationList(getFuelStationsList());
+        List<FuelStation> fuelStationList = getFuelStationsList();
+        List<Map<String, Object>> propertiesList = new ArrayList<>();
+        for (FuelStation fuelStation : fuelStationList) {
+            Map<String, Object> properties = getFuelStationJsonProperties(fuelStation);
+            propertiesList.add(properties);
+        }
+        return JsonLoader.generateJsonPointList(propertiesList);
     }
+
+    private Map<String, Object> getFuelStationJsonProperties(FuelStation fuelStation) {
+        Map<String, Object> properties = new LinkedHashMap<>();
+        properties.put("idFuelStation", fuelStation.getIdFuelStation());
+        properties.put("idEntity", fuelStation.getIdEntity());
+        properties.put("idDepartment", fuelStation.getIdDepartment());
+        properties.put("fuelStationName", fuelStation.getFuelStationName());
+        properties.put("direction", fuelStation.getDirection());
+        properties.put("longitude", fuelStation.getLocation().getX());
+        properties.put("latitude ", fuelStation.getLocation().getY());
+        properties.put("createdAt", fuelStation.getCreatedAt());
+        return properties;
+    }
+
 }

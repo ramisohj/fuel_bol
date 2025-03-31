@@ -1,34 +1,28 @@
 package com.ramisohj.fuel_bol.util;
 
-import com.ramisohj.fuel_bol.model.FuelStation;
 import com.ramisohj.fuel_bol.model.GeojsonPoint;
 import com.ramisohj.fuel_bol.model.GeojsonPointList;
 
 import java.util.List;
+import java.util.Map;
 
 
 public class GeojsonLoader {
 
-    public static GeojsonPoint generateFuelStation(FuelStation fuelStation) {
-
-        GeojsonPoint fuelStationPoint = new GeojsonPoint();
-        fuelStationPoint.addProperty("idFuelStation", fuelStation.getIdFuelStation());
-        fuelStationPoint.addProperty("idEntity", fuelStation.getIdEntity());
-        fuelStationPoint.addProperty("idDepartment", fuelStation.getIdDepartment());
-        fuelStationPoint.addProperty("fuelStationName", fuelStation.getFuelStationName());
-        fuelStationPoint.addProperty("direction", fuelStation.getDirection());
-        fuelStationPoint.addProperty("createdAt", fuelStation.getCreatedAt());
-        fuelStationPoint.addGeometry(fuelStation.getLocation());
-
-        return fuelStationPoint;
+    public static GeojsonPoint generateGeojsonPoint(Map<String, Object> properties) {
+        GeojsonPoint geojsonPoint = new GeojsonPoint();
+        for (Map.Entry<String, Object> entry : properties.entrySet()) {
+            geojsonPoint.addProperty(entry.getKey(), entry.getValue());
+        }
+        return geojsonPoint;
     }
 
-    public static GeojsonPointList generateFuelStationList(List<FuelStation> fuelStations) {
-        GeojsonPointList fuelStationPointList = new GeojsonPointList();
-        for (FuelStation fuelStation : fuelStations) {
-            fuelStationPointList.addPoint(generateFuelStation(fuelStation));
+    public static GeojsonPointList generateGeojsonPointList(List<Map<String, Object>> propertiesList) {
+        GeojsonPointList geojsonPointList = new GeojsonPointList();
+        for (Map<String, Object> properties : propertiesList) {
+            geojsonPointList.addPoint(generateGeojsonPoint(properties));
         }
-        return fuelStationPointList;
+        return geojsonPointList;
     }
 
 }
