@@ -1,6 +1,5 @@
 package com.ramisohj.fuel_bol.scheduling;
 
-
 import com.ramisohj.fuel_bol.model.FuelCode;
 import com.ramisohj.fuel_bol.model.FuelMonitoring;
 import com.ramisohj.fuel_bol.model.FuelStation;

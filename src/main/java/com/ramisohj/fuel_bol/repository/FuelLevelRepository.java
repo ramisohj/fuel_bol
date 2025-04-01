@@ -88,6 +88,82 @@ public interface FuelLevelRepository extends JpaRepository<FuelLevel, Long> {
         FROM fuel_levels fl
         JOIN fuel_stations fs ON fl.id_fuel_station = fs.id_fuel_station
         JOIN last_monitoring lm ON fl.id_monitoring = lm.id_monitoring
+        WHERE fl.fuel_type = :fuel_type        
+        """,
+            nativeQuery = true)
+    List<FuelStationLevels> findAllLatestFuelStationLevelsByFuelType(
+            @Param("fuel_type") String fuelType
+    );
+
+    @Query(value = """
+        WITH last_monitoring AS (
+            SELECT MAX(id_monitoring) AS id_monitoring
+            FROM fuel_monitoring
+        )
+        SELECT
+            lm.id_monitoring,
+            fl.id_fuel_level,
+            fs.id_fuel_station,
+            fs.fuel_station_name,
+            fs.direction,
+            fs.location,
+            fl.fuel_type,
+            fl.level_bsa,
+            fl.monitoring_at
+        FROM fuel_levels fl
+        JOIN fuel_stations fs ON fl.id_fuel_station = fs.id_fuel_station
+        JOIN last_monitoring lm ON fl.id_monitoring = lm.id_monitoring
+        WHERE fs.id_department = :id_department
+        """,
+            nativeQuery = true)
+    List<FuelStationLevels> findAllLatestFuelStationLevelsByIdDepartment(
+            @Param("id_department") int idDepartment
+    );
+
+    @Query(value = """
+        WITH last_monitoring AS (
+            SELECT MAX(id_monitoring) AS id_monitoring
+            FROM fuel_monitoring
+        )
+        SELECT
+            lm.id_monitoring,
+            fl.id_fuel_level,
+            fs.id_fuel_station,
+            fs.fuel_station_name,
+            fs.direction,
+            fs.location,
+            fl.fuel_type,
+            fl.level_bsa,
+            fl.monitoring_at
+        FROM fuel_levels fl
+        JOIN fuel_stations fs ON fl.id_fuel_station = fs.id_fuel_station
+        JOIN last_monitoring lm ON fl.id_monitoring = lm.id_monitoring
+        WHERE fs.id_department = :id_department AND fl.fuel_type = :fuel_type
+        """,
+            nativeQuery = true)
+    List<FuelStationLevels> findAllLatestFuelStationLevelsByIdDepartmentAndFuelType(
+            @Param("id_department") int idDepartment,
+            @Param("fuel_type") String fuelType
+    );
+
+    @Query(value = """
+        WITH last_monitoring AS (
+            SELECT MAX(id_monitoring) AS id_monitoring
+            FROM fuel_monitoring
+        )
+        SELECT
+            lm.id_monitoring,
+            fl.id_fuel_level,
+            fs.id_fuel_station,
+            fs.fuel_station_name,
+            fs.direction,
+            fs.location,
+            fl.fuel_type,
+            fl.level_bsa,
+            fl.monitoring_at
+        FROM fuel_levels fl
+        JOIN fuel_stations fs ON fl.id_fuel_station = fs.id_fuel_station
+        JOIN last_monitoring lm ON fl.id_monitoring = lm.id_monitoring
         WHERE fs.id_fuel_station = :idFuelStation
         """,
             nativeQuery = true)

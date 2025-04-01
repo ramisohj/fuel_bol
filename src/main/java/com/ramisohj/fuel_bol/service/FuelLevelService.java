@@ -34,4 +34,19 @@ public class FuelLevelService {
         return JsonLoader.jsonPointListFuelStationLevels(fuelLevelRepository.findAllLatestFuelStationLevelsByIdFuelStation(idFuelStation));
     }
 
+    @Transactional(readOnly = true)
+    public JsonPointList getAllLatestFuelStationLevelsByFuelType(String fuelType) {
+        return JsonLoader.jsonPointListFuelStationLevels(fuelLevelRepository.findAllLatestFuelStationLevelsByFuelType(fuelType));
+    }
+
+    @Transactional(readOnly = true)
+    public JsonPointList getAllLatestFuelStationLevelsByIdDepartment(int idDepartment) {
+        return JsonLoader.jsonPointListFuelStationLevels(fuelLevelRepository.findAllLatestFuelStationLevelsByIdDepartment(idDepartment));
+    }
+
+    @Transactional(readOnly = true)
+    public JsonPointList getAllLatestFuelStationLevelsByIdDepartmentAndFuelType(int idDepartment, String fuelType) {
+        return JsonLoader.jsonPointListFuelStationLevels(fuelLevelRepository.findAllLatestFuelStationLevelsByIdDepartmentAndFuelType(idDepartment, fuelType));
+    }
+
 }
