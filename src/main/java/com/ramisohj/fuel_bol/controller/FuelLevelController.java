@@ -1,6 +1,7 @@
 package com.ramisohj.fuel_bol.controller;
 
 import com.ramisohj.fuel_bol.model.FuelCode;
+import com.ramisohj.fuel_bol.model.GeojsonPointList;
 import com.ramisohj.fuel_bol.model.JsonPointList;
 import com.ramisohj.fuel_bol.service.FuelLevelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,33 @@ public class FuelLevelController {
             @PathVariable int idFuelType) {
         JsonPointList fuelStationsLevels =
                 fuelLevelService.getAllLatestFuelStationLevelsByIdDepartmentAndFuelType(
+                        idDepartment, FuelCode.getFuelTypeByCode(idFuelType));
+        return ResponseEntity.ok(fuelStationsLevels.getGeojsonPointList());
+    }
+
+    ////////////////////////////////////////GEOJSON FORMAT//////////////////////////////////////////////////////////////
+    @GetMapping("/geo/fuel-type/{idFuelType}")
+    public ResponseEntity<Map<String, Object>> getGeoAllLatestFuelStationLevelsByFuelType(
+            @PathVariable int idFuelType) {
+        GeojsonPointList fuelStationsLevels =
+                fuelLevelService.getGeoAllLatestFuelStationLevelsByFuelType(FuelCode.getFuelTypeByCode(idFuelType));
+        return ResponseEntity.ok(fuelStationsLevels.getGeojsonPointList());
+    }
+
+    @GetMapping("/geo/department/{idDepartment}")
+    public ResponseEntity<Map<String, Object>> getGeoAllLatestFuelStationLevelsByIdDepartment(
+            @PathVariable int idDepartment) {
+        GeojsonPointList fuelStationsLevels =
+                fuelLevelService.getGeoAllLatestFuelStationLevelsByIdDepartment(idDepartment);
+        return ResponseEntity.ok(fuelStationsLevels.getGeojsonPointList());
+    }
+
+    @GetMapping("/geo/{idDepartment}/{idFuelType}")
+    public ResponseEntity<Map<String, Object>> getGeoAllLatestFuelStationLevelsByIdDepartmentAndFuelType(
+            @PathVariable int idDepartment,
+            @PathVariable int idFuelType) {
+        GeojsonPointList fuelStationsLevels =
+                fuelLevelService.getGeoAllLatestFuelStationLevelsByIdDepartmentAndFuelType(
                         idDepartment, FuelCode.getFuelTypeByCode(idFuelType));
         return ResponseEntity.ok(fuelStationsLevels.getGeojsonPointList());
     }
