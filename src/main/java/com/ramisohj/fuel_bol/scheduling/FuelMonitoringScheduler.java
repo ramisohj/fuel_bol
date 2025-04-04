@@ -51,7 +51,6 @@ public class FuelMonitoringScheduler {
 
             List<FuelStation> fuelStations = fuelStationRepository.findAll();
             FuelMonitoring fuelMonitoring = saveMonitoring();
-            System.out.println("✅ Monitoring record saved at: " + fuelMonitoring.getCreatedAt());
 
             for (FuelStation fuelStation : fuelStations) {
                 for (FuelCode fuelCode : FuelCode.values()) {
@@ -62,9 +61,6 @@ public class FuelMonitoringScheduler {
 
                     if (response.getStatusCode().is2xxSuccessful()) {
                         saveFuelTanks(response.getBody(), fuelMonitoring, fuelCode, fuelStationUrl);
-                    } else {
-                        System.out.println("WARNING: response not success at: " + LocalDateTime.now() +
-                                "; fuel_station_url: " + fuelStationUrl);
                     }
                 }
             }
@@ -72,7 +68,6 @@ public class FuelMonitoringScheduler {
             // populating fuel_levels table:
             fuelLevelService.insertFuelLevels(fuelMonitoring.getIdMonitoring());
         } catch (Exception e) {
-            System.out.println("ERROR: monitorFuelStations at: " + LocalDateTime.now());
             e.printStackTrace();
         }
 
@@ -117,18 +112,8 @@ public class FuelMonitoringScheduler {
                 }
 
                 fuelTankRepository.saveAll(dataList);
-//                System.out.println("Fuel tank list SUCCESSFULLY saved at: " + LocalDateTime.now() +
-//                        "; fuel_station_url: " + fuelStationUrl);
             }
         }
-//            } else {
-//                System.out.println("Fuel tank list EMPTY at: " + LocalDateTime.now() +
-//                        "; fuel_station_url: " + fuelStationUrl);
-//            }
-//        } else {
-//            System.out.println("WARNING: oResultado is missing or null (no records) at: " + LocalDateTime.now() +
-//                    "; fuel_station_url: " + fuelStationUrl);
-//        }
     }
 
     public LocalDateTime getLastExecutionTime() {

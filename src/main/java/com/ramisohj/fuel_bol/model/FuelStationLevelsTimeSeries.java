@@ -15,6 +15,8 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @FieldNameConstants
 public class FuelStationLevelsTimeSeries {
+    //TODO: replace the Timestamp type for a LocalDateTime, in order to save the time zone as well
     private Timestamp monitoringAt;
     private double levelBsa;
+
 }
