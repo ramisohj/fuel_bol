@@ -93,7 +93,7 @@ public class FuelMonitoringScheduler {
         if (jsonObject.has("oResultado") && !jsonObject.isNull("oResultado")) {
             JSONArray jsonArray = jsonObject.getJSONArray("oResultado");
 
-            if (!jsonArray.isEmpty()){
+            if (!jsonArray.isEmpty()) {
                 List<FuelTank> dataList = new ArrayList<>();
 
                 for (int i = 0; i < jsonArray.length(); i++) {
@@ -117,17 +117,18 @@ public class FuelMonitoringScheduler {
                 }
 
                 fuelTankRepository.saveAll(dataList);
-                System.out.println("Fuel tank list SUCCESSFULLY saved at: " + LocalDateTime.now() +
-                        "; fuel_station_url: " + fuelStationUrl);
-
-            } else {
-                System.out.println("Fuel tank list EMPTY at: " + LocalDateTime.now() +
-                        "; fuel_station_url: " + fuelStationUrl);
+//                System.out.println("Fuel tank list SUCCESSFULLY saved at: " + LocalDateTime.now() +
+//                        "; fuel_station_url: " + fuelStationUrl);
             }
-        } else {
-            System.out.println("WARNING: oResultado is missing or null (no records) at: " + LocalDateTime.now() +
-                    "; fuel_station_url: " + fuelStationUrl);
         }
+//            } else {
+//                System.out.println("Fuel tank list EMPTY at: " + LocalDateTime.now() +
+//                        "; fuel_station_url: " + fuelStationUrl);
+//            }
+//        } else {
+//            System.out.println("WARNING: oResultado is missing or null (no records) at: " + LocalDateTime.now() +
+//                    "; fuel_station_url: " + fuelStationUrl);
+//        }
     }
 
     public LocalDateTime getLastExecutionTime() {
