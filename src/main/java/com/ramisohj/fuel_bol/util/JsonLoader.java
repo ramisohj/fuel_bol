@@ -67,7 +67,9 @@ public class JsonLoader {
         properties.put(FuelStationLevels.Fields.idFuelStation ,fuelStationLevels.getIdFuelStation());
         properties.put(FuelStationLevels.Fields.fuelStationName ,fuelStationLevels.getFuelStationName());
         properties.put(FuelStationLevels.Fields.direction ,fuelStationLevels.getDirection());
-        properties.put(FuelStationLevels.Fields.location, getCoordinates(fuelStationLevels.getLocation()));
+        //properties.put(FuelStationLevels.Fields.location, getCoordinates(fuelStationLevels.getLocation()));
+        properties.put(AppConstants.Geojson.LONGITUDE, fuelStationLevels.getLocation().getPosition().getCoordinate(0));
+        properties.put(AppConstants.Geojson.LATITUDE, fuelStationLevels.getLocation().getPosition().getCoordinate(1));
         properties.put(FuelStationLevels.Fields.fuelType ,fuelStationLevels.getFuelType());
         properties.put(FuelStationLevels.Fields.levelBsa ,fuelStationLevels.getLevelBsa());
         properties.put(FuelStationLevels.Fields.monitoringAt ,fuelStationLevels.getMonitoringAt().toLocalDateTime());

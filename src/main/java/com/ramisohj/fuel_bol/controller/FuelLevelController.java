@@ -40,6 +40,8 @@ public class FuelLevelController {
         return ResponseEntity.ok(fuelStationsLevels.getGeojsonPointList());
     }
 
+    ////////////////////////////////////////FLAT FORMAT//////////////////////////////////////////////////////////////
+
     @GetMapping("/fuel-type/{idFuelType}")
     public ResponseEntity<List<Map<String, Object>>> getAllLatestFuelStationLevelsByFuelType(
             @PathVariable int idFuelType) {
