@@ -1,5 +1,6 @@
 package com.ramisohj.fuel_bol.service;
 
+import com.ramisohj.fuel_bol.model.FuelStationLevelsTimeSeries;
 import com.ramisohj.fuel_bol.model.GeojsonPointList;
 import com.ramisohj.fuel_bol.model.JsonPointList;
 import com.ramisohj.fuel_bol.util.GeoLoader;
@@ -8,6 +9,8 @@ import com.ramisohj.fuel_bol.util.JsonLoader;
 import org.springframework.stereotype.Service;
 import com.ramisohj.fuel_bol.repository.FuelLevelRepository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 
 @Service
@@ -72,5 +75,10 @@ public class FuelLevelService {
     public GeojsonPointList getGeoAllLatestFuelStationLevelsByIdDepartmentAndFuelType(int idDepartment, String fuelType) {
         return GeoLoader.getGeojsonPointFuelStationsLevelsList(
                 fuelLevelRepository.findAllLatestFuelStationLevelsByIdDepartmentAndFuelType(idDepartment, fuelType));
+    }
+
+    @Transactional(readOnly = true)
+    public List<FuelStationLevelsTimeSeries> getFuelStationLevelsTimeSeries(long idFuelStation, String fuelType) {
+        return fuelLevelRepository.getTimeSeriesByFuelType(idFuelStation, fuelType);
     }
 }

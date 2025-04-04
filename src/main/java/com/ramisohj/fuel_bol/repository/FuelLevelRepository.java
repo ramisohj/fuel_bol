@@ -2,6 +2,7 @@ package com.ramisohj.fuel_bol.repository;
 
 import com.ramisohj.fuel_bol.model.FuelLevel;
 import com.ramisohj.fuel_bol.model.FuelStationLevels;
+import com.ramisohj.fuel_bol.model.FuelStationLevelsTimeSeries;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -169,6 +170,20 @@ public interface FuelLevelRepository extends JpaRepository<FuelLevel, Long> {
             nativeQuery = true)
     List<FuelStationLevels> findAllLatestFuelStationLevelsByIdFuelStation(
             @Param("idFuelStation") Long idFuelStation
+    );
+
+    @Query(value = """
+        SELECT
+	        fl.monitoring_at,
+	        fl.level_bsa
+        FROM fuel_levels fl
+        WHERE fl.id_fuel_station = :idFuelStation AND fl.fuel_type=:fuelType
+        ORDER BY fl.id_monitoring ASC
+        """,
+            nativeQuery = true)
+    List<FuelStationLevelsTimeSeries> getTimeSeriesByFuelType(
+            @Param("idFuelStation") Long idFuelStation,
+            @Param("fuelType" ) String fuelType
     );
 
 }

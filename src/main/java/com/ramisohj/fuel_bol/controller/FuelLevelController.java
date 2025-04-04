@@ -1,6 +1,7 @@
 package com.ramisohj.fuel_bol.controller;
 
 import com.ramisohj.fuel_bol.model.FuelCode;
+import com.ramisohj.fuel_bol.model.FuelStationLevelsTimeSeries;
 import com.ramisohj.fuel_bol.model.GeojsonPointList;
 import com.ramisohj.fuel_bol.model.JsonPointList;
 import com.ramisohj.fuel_bol.service.FuelLevelService;
@@ -93,6 +94,16 @@ public class FuelLevelController {
                 fuelLevelService.getGeoAllLatestFuelStationLevelsByIdDepartmentAndFuelType(
                         idDepartment, FuelCode.getFuelTypeByCode(idFuelType));
         return ResponseEntity.ok(fuelStationsLevels.getGeojsonPointList());
+    }
+
+    ///////////////////////////////////////////TIME-SERIES//////////////////////////////////////////////////////////////
+    @GetMapping("/time-series/{idFuelStation}/{idFuelType}")
+    public ResponseEntity<List<FuelStationLevelsTimeSeries>> getTimeSeriesFuelStationLevelsByIdFuelType(
+            @PathVariable Long idFuelStation,
+            @PathVariable int idFuelType
+    ) {
+        return ResponseEntity.ok(
+                fuelLevelService.getFuelStationLevelsTimeSeries(idFuelStation, FuelCode.getFuelTypeByCode(idFuelType)));
     }
 
 }
