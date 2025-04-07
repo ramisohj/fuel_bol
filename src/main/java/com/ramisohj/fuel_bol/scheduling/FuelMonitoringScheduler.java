@@ -1,9 +1,8 @@
 package com.ramisohj.fuel_bol.scheduling;
 
-import com.ramisohj.fuel_bol.model.FuelCode;
-import com.ramisohj.fuel_bol.model.FuelMonitoring;
-import com.ramisohj.fuel_bol.model.FuelStation;
-import com.ramisohj.fuel_bol.model.FuelTank;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ramisohj.fuel_bol.model.*;
 import com.ramisohj.fuel_bol.repository.FuelMonitoringRepository;
 import com.ramisohj.fuel_bol.repository.FuelStationRepository;
 import com.ramisohj.fuel_bol.repository.FuelTankRepository;
@@ -18,9 +17,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 
 @Component
@@ -60,7 +59,7 @@ public class FuelMonitoringScheduler {
                     ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
 
                     if (response.getStatusCode().is2xxSuccessful()) {
-                        saveFuelTanks(response.getBody(), fuelMonitoring, fuelCode, fuelStationUrl);
+                        saveFuelTanks(response.getBody(), fuelMonitoring, fuelCode);
                     }
                 }
             }
@@ -81,38 +80,46 @@ public class FuelMonitoringScheduler {
         return fuelMonitoringRepository.save(fuelMonitoring);
     }
 
-    @Transactional
-    protected void saveFuelTanks(String jsonResponse, FuelMonitoring fuelMonitoring, FuelCode fuelCode,String fuelStationUrl) {
-        JSONObject jsonObject = new JSONObject(jsonResponse);
+    private ObjectMapper objectMapper;
 
-        if (jsonObject.has("oResultado") && !jsonObject.isNull("oResultado")) {
-            JSONArray jsonArray = jsonObject.getJSONArray("oResultado");
+    protected void saveFuelTanks(String jsonResponse, FuelMonitoring fuelMonitoring, FuelCode fuelCode) {
+        try {
+            JSONObject jsonObject = new JSONObject(jsonResponse);
 
-            if (!jsonArray.isEmpty()) {
-                List<FuelTank> dataList = new ArrayList<>();
+            if (jsonObject.has("oResultado") && !jsonObject.isNull("oResultado")) {
+                JSONArray jsonArray = jsonObject.getJSONArray("oResultado");
 
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject obj = jsonArray.getJSONObject(i);
-                    FuelTank fuelTank = new FuelTank();
+                if (!jsonArray.isEmpty()) {
 
-                    fuelTank.setIdMonitoring(fuelMonitoring.getIdMonitoring());
-                    fuelTank.setIdFuelStation(obj.getLong("id_eess"));
-                    fuelTank.setIdEntity(obj.getLong("id_entidad"));
-                    fuelTank.setIdProductBsa(obj.getInt("id_producto_bsa"));
-                    fuelTank.setIdProductHydro(obj.getInt("id_producto_hydro"));
+                    List<FuelTankDTO> dtoList = objectMapper.readValue(
+                            jsonArray.toString(),
+                            new TypeReference<List<FuelTankDTO>>() {}
+                    );
 
-                    fuelTank.setFuelType(fuelCode.toString());
-                    fuelTank.setLevelBsa(obj.getInt("saldo_bsa"));
-                    fuelTank.setLevelOctane(obj.getInt("saldo_octano"));
-                    fuelTank.setLevelPlant(obj.getInt("saldo_planta"));
+                    LocalDateTime now = LocalDateTime.now();
+                    List<FuelTank> dataList = dtoList.stream().map(dto -> {
+                        FuelTank fuelTank = new FuelTank();
 
-                    fuelTank.setCreatedAt(LocalDateTime.now());
+                        fuelTank.setIdMonitoring(fuelMonitoring.getIdMonitoring());
+                        fuelTank.setIdFuelStation(dto.getIdFuelStation());
+                        fuelTank.setIdEntity(dto.getIdEntity());
+                        fuelTank.setIdProductBsa(dto.getIdProductBsa());
+                        fuelTank.setIdProductHydro(dto.getIdProductHydro());
 
-                    dataList.add(fuelTank);
+                        fuelTank.setFuelType(fuelCode.toString());
+                        fuelTank.setLevelBsa(dto.getLevelBsa());
+                        fuelTank.setLevelOctane(dto.getLevelOctane());
+                        fuelTank.setLevelPlant(dto.getLevelPlant());
+                        fuelTank.setCreatedAt(now);
+
+                        return fuelTank;
+                    }).collect(Collectors.toList());
+
+                    fuelTankRepository.saveAll(dataList);
                 }
-
-                fuelTankRepository.saveAll(dataList);
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
