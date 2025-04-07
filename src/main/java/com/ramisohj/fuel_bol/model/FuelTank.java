@@ -22,8 +22,15 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class FuelTank {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fuel_tank_seq")
-    @SequenceGenerator(name = "fuel_tank_seq", sequenceName = "fuel_tank_seq", allocationSize = 100)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "fuel_tank_seq"
+    )
+    @SequenceGenerator(
+            name = "fuel_tank_seq",
+            sequenceName = "fuel_tank_seq",
+            allocationSize = 100
+    )
     private Long idFuelTank;
     private Long idMonitoring;
     private Long idFuelStation;
