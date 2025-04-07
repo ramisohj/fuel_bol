@@ -9,6 +9,7 @@ import com.ramisohj.fuel_bol.repository.FuelTankRepository;
 import com.ramisohj.fuel_bol.service.FuelLevelService;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -80,6 +81,7 @@ public class FuelMonitoringScheduler {
         return fuelMonitoringRepository.save(fuelMonitoring);
     }
 
+    @Autowired
     private ObjectMapper objectMapper;
 
     protected void saveFuelTanks(String jsonResponse, FuelMonitoring fuelMonitoring, FuelCode fuelCode) {
