@@ -18,9 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Collectors;
 
 
 @Component
@@ -47,10 +47,11 @@ public class FuelMonitoringScheduler {
     @Transactional
     public void monitorFuelStations() {
         try {
-            lastExecutionTime.set(LocalDateTime.now()); // Update last run time
+            lastExecutionTime.set(LocalDateTime.now());
 
             List<FuelStation> fuelStations = fuelStationRepository.findAll();
             FuelMonitoring fuelMonitoring = saveMonitoring();
+            List<FuelTank> allFuelTanks = new ArrayList<>();
 
             for (FuelStation fuelStation : fuelStations) {
                 for (FuelCode fuelCode : FuelCode.values()) {
@@ -60,12 +61,13 @@ public class FuelMonitoringScheduler {
                     ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
 
                     if (response.getStatusCode().is2xxSuccessful()) {
-                        saveFuelTanks(response.getBody(), fuelMonitoring, fuelCode);
+                        allFuelTanks.addAll(saveFuelTanks(response.getBody(), fuelMonitoring, fuelCode));
                     }
                 }
             }
 
-            // populating fuel_levels table:
+            // populating fuel_tanks and fuel_levels tables:
+            fuelTankRepository.saveAll(allFuelTanks);
             fuelLevelService.insertFuelLevels(fuelMonitoring.getIdMonitoring());
         } catch (Exception e) {
             e.printStackTrace();
@@ -84,7 +86,9 @@ public class FuelMonitoringScheduler {
     @Autowired
     private ObjectMapper objectMapper;
 
-    protected void saveFuelTanks(String jsonResponse, FuelMonitoring fuelMonitoring, FuelCode fuelCode) {
+    protected List<FuelTank> saveFuelTanks(String jsonResponse, FuelMonitoring fuelMonitoring, FuelCode fuelCode) {
+
+        List<FuelTank> fuelTanks = new ArrayList<>();
         try {
             JSONObject jsonObject = new JSONObject(jsonResponse);
 
@@ -99,7 +103,7 @@ public class FuelMonitoringScheduler {
                     );
 
                     LocalDateTime now = LocalDateTime.now();
-                    List<FuelTank> dataList = dtoList.stream().map(dto -> {
+                    List<FuelTank> fuelTankList = dtoList.stream().map(dto -> {
                         FuelTank fuelTank = new FuelTank();
 
                         fuelTank.setIdMonitoring(fuelMonitoring.getIdMonitoring());
@@ -115,14 +119,15 @@ public class FuelMonitoringScheduler {
                         fuelTank.setCreatedAt(now);
 
                         return fuelTank;
-                    }).collect(Collectors.toList());
+                    }).toList();
 
-                    fuelTankRepository.saveAll(dataList);
+                    fuelTanks.addAll(fuelTankList);
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return fuelTanks;
     }
 
     public LocalDateTime getLastExecutionTime() {
