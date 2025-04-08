@@ -30,7 +30,7 @@ public class FuelMonitoringWatchdog {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("✅ Fuel monitoring task is running fine. Last run: " + lastRun);
+            System.out.println("✅ Fuel monitoring task is running fine at: " + LocalDateTime.now());
         }
     }
 }
