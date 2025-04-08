@@ -7,7 +7,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.PreparedStatement;
@@ -28,7 +27,7 @@ public class FuelMonitoringService {
         this.fuelMonitoringRepository = fuelMonitoringRepository;
     }
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    @Transactional
     public FuelMonitoring insertFuelMonitoring(FuelMonitoring monitoring) {
         String sql = "INSERT INTO fuel_monitoring (monitoring_at, created_at) VALUES (?, ?)";
 
