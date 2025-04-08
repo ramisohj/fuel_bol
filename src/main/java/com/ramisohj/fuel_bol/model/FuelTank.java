@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @Entity
@@ -35,4 +36,20 @@ public class FuelTank {
     private double levelPlant;
 
     private LocalDateTime createdAt;
+
+    // Convert this FuelTank object to a CSV string suitable for COPY
+    public String toCsv() {
+        return String.join(",",
+                idMonitoring.toString(),
+                idFuelStation.toString(),
+                idEntity.toString(),
+                String.valueOf(idProductBsa),
+                String.valueOf(idProductHydro),
+                fuelType,
+                String.valueOf(levelBsa),
+                String.valueOf(levelOctane),
+                String.valueOf(levelPlant),
+                createdAt != null ? createdAt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) : ""
+        );
+    }
 }

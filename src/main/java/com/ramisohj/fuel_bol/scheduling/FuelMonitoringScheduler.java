@@ -2,11 +2,15 @@ package com.ramisohj.fuel_bol.scheduling;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ramisohj.fuel_bol.model.*;
-import com.ramisohj.fuel_bol.repository.FuelMonitoringRepository;
+import com.ramisohj.fuel_bol.model.FuelCode;
+import com.ramisohj.fuel_bol.model.FuelMonitoring;
+import com.ramisohj.fuel_bol.model.FuelStation;
+import com.ramisohj.fuel_bol.model.FuelTank;
+import com.ramisohj.fuel_bol.model.FuelTankDTO;
 import com.ramisohj.fuel_bol.repository.FuelStationRepository;
-import com.ramisohj.fuel_bol.repository.FuelTankRepository;
 import com.ramisohj.fuel_bol.service.FuelLevelService;
+import com.ramisohj.fuel_bol.service.FuelMonitoringService;
+import com.ramisohj.fuel_bol.service.FuelTankService;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +30,8 @@ import java.util.concurrent.atomic.AtomicReference;
 @Component
 public class FuelMonitoringScheduler {
 
-    private final FuelMonitoringRepository fuelMonitoringRepository;
-    private final FuelTankRepository fuelTankRepository;
+    private final FuelMonitoringService fuelMonitoringService;
+    private final FuelTankService fuelTankService;
     private final FuelStationRepository fuelStationRepository;
     @Value("${api.anh.fuel-station.level}")
     private String apiFuelStation;
@@ -35,15 +39,15 @@ public class FuelMonitoringScheduler {
     private final FuelLevelService fuelLevelService;
     private final AtomicReference<LocalDateTime> lastExecutionTime = new AtomicReference<>(LocalDateTime.now());
 
-    public FuelMonitoringScheduler(FuelMonitoringRepository fuelMonitoringRepository, FuelTankRepository fuelTankRepository, FuelStationRepository fuelStationRepository, FuelLevelService fuelLevelService) {
-        this.fuelMonitoringRepository = fuelMonitoringRepository;
-        this.fuelTankRepository = fuelTankRepository;
+    public FuelMonitoringScheduler(FuelMonitoringService fuelMonitoringService, FuelTankService fuelTankService, FuelStationRepository fuelStationRepository, FuelLevelService fuelLevelService) {
+        this.fuelMonitoringService = fuelMonitoringService;
+        this.fuelTankService = fuelTankService;
         this.fuelStationRepository = fuelStationRepository;
         this.fuelLevelService = fuelLevelService;
         this.restTemplate = new RestTemplate();
     }
 
-    @Scheduled(cron = "0 0/10 * * * *") // Runs every 10 minutes
+    @Scheduled(cron = "0 0/4 * * * *") // Runs every 10 minutes
     @Transactional
     public void monitorFuelStations() {
         try {
@@ -67,7 +71,7 @@ public class FuelMonitoringScheduler {
             }
 
             // populating fuel_tanks and fuel_levels tables:
-            fuelTankRepository.saveAll(allFuelTanks);
+            fuelTankService.bulkInsert(allFuelTanks);
             fuelLevelService.insertFuelLevels(fuelMonitoring.getIdMonitoring());
         } catch (Exception e) {
             e.printStackTrace();
@@ -80,7 +84,7 @@ public class FuelMonitoringScheduler {
         FuelMonitoring fuelMonitoring = new FuelMonitoring();
         fuelMonitoring.setMonitoringAt(LocalDateTime.now());
         fuelMonitoring.setCreatedAt(LocalDateTime.now());
-        return fuelMonitoringRepository.save(fuelMonitoring);
+        return fuelMonitoringService.insertFuelMonitoring(fuelMonitoring);
     }
 
     @Autowired
