@@ -47,7 +47,7 @@ public class FuelMonitoringScheduler {
         this.restTemplate = new RestTemplate();
     }
 
-    @Scheduled(cron = "0 0/4 * * * *") // Runs every 10 minutes
+    @Scheduled(cron = "0 0/10 * * * *") // Runs every 10 minutes
     @Transactional
     public void monitorFuelStations() {
         try {
