@@ -28,7 +28,8 @@ public class FuelMonitoringService {
         this.fuelMonitoringRepository = fuelMonitoringRepository;
     }
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+//    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    @Transactional
     public FuelMonitoring insertFuelMonitoring(FuelMonitoring monitoring) {
         String sql = "INSERT INTO fuel_monitoring (monitoring_at, created_at) VALUES (?, ?)";
 
