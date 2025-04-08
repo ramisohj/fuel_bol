@@ -79,6 +79,7 @@ public class FuelTankService {
         }
     }
 
+    // TODO: this method has better performance, use it only in a environment with good resources.
     public List<FuelTank> fetchFuelDataParallel(List<FuelStation> stations, FuelMonitoring monitoring, String apiFuelStation) {
         List<CompletableFuture<List<FuelTank>>> futures = stations.stream()
                 .flatMap(station -> Arrays.stream(FuelCode.values())
@@ -88,11 +89,13 @@ public class FuelTankService {
                                 ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 
                                 if (response.getStatusCode().is2xxSuccessful()) {
-                                    //saveFuelTanks(String jsonResponse, FuelMonitoring fuelMonitoring, FuelCode fuelCode)
                                     return saveFuelTanks(response.getBody(), monitoring, fuelCode);
                                 }
                             } catch (Exception e) {
-                                System.out.printf("Failed API: station=%d code=%s - %s%n", station.getIdFuelStation(), fuelCode, e.getMessage());
+                                System.out.printf("Failed API: station=%d code=%s - %s%n",
+                                        station.getIdFuelStation(),
+                                        fuelCode,
+                                        e.getMessage());
                             }
                             return Collections.<FuelTank>emptyList();
                         }))
@@ -103,6 +106,31 @@ public class FuelTankService {
                 .map(CompletableFuture::join)
                 .flatMap(List::stream)
                 .collect(Collectors.toList());
+    }
+
+    public List<FuelTank> fetchFuelDataSequential(List<FuelStation> stations, FuelMonitoring monitoring, String apiFuelStation) {
+        List<FuelTank> allTanks = new ArrayList<>();
+
+        for (FuelStation station : stations) {
+            for (FuelCode fuelCode : FuelCode.values()) {
+                try {
+                    String url = apiFuelStation + "/" + station.getIdFuelStation() + "/" + fuelCode.ordinal();
+                    ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+
+                    if (response.getStatusCode().is2xxSuccessful()) {
+                        List<FuelTank> tanks = saveFuelTanks(response.getBody(), monitoring, fuelCode);
+                        allTanks.addAll(tanks);
+                    }
+                } catch (Exception e) {
+                    System.out.printf("Failed API: station=%d code=%s - %s%n",
+                            station.getIdFuelStation(),
+                            fuelCode,
+                            e.getMessage()
+                    );
+                }
+            }
+        }
+        return allTanks;
     }
 
     private List<FuelTank> saveFuelTanks(String jsonResponse, FuelMonitoring fuelMonitoring, FuelCode fuelCode) {

@@ -11,10 +11,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.client.RestTemplate;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -27,7 +27,6 @@ public class FuelMonitoringScheduler {
     private final FuelStationRepository fuelStationRepository;
     @Value("${api.anh.fuel-station.level}")
     private String apiFuelStation;
-    private final RestTemplate restTemplate;
     private final FuelLevelService fuelLevelService;
     private final AtomicReference<LocalDateTime> lastExecutionTime = new AtomicReference<>(LocalDateTime.now());
 
@@ -36,30 +35,43 @@ public class FuelMonitoringScheduler {
         this.fuelTankService = fuelTankService;
         this.fuelStationRepository = fuelStationRepository;
         this.fuelLevelService = fuelLevelService;
-        this.restTemplate = new RestTemplate();
     }
 
-    //@Scheduled(cron = "0 0/10 * * * *") // Runs every 10 minutes
-    @Scheduled(cron = "0 0/10 * * * *")
+    @Scheduled(cron = "0 0/10 * * * *")// Runs every 10 minutes
     @Transactional
     public void monitorFuelStations() {
         LocalDateTime start = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         lastExecutionTime.set(start);
 
         try {
             List<FuelStation> stations = fuelStationRepository.findAll();
-            FuelMonitoring monitoring = saveMonitoring();;
+            FuelMonitoring monitoring = saveMonitoring();
 
-            List<FuelTank> tanks = fuelTankService.fetchFuelDataParallel(stations, monitoring, apiFuelStation);
+            System.out.printf("\u26FD Fuel monitoring started at: %s. Processing %d fuel stations.%n",
+                    start.format(formatter),
+                    stations.size()
+            );
 
-            fuelTankService.bulkInsert(tanks);
+            // TODO: if fuelTankList is empty, DO NOT SAVE THE ANY RECORD ON: fuel_monitoring, fuel_tanks, fuel_levels tables
+            List<FuelTank> fuelTankList = fuelTankService.fetchFuelDataSequential(stations, monitoring, apiFuelStation);
+            fuelTankService.bulkInsert(fuelTankList);
             fuelLevelService.insertFuelLevels(monitoring.getIdMonitoring());
 
-            System.out.printf("\u26FD Fuel monitoring completed in %d seconds. Processed %d tanks.%n",
-                    Duration.between(start, LocalDateTime.now()).toSeconds(), tanks.size());
+            System.out.printf("\u26FD Fuel monitoring completed in %d seconds. Processed %d fuel tanks.%n",
+                    Duration.between(start, LocalDateTime.now()).toSeconds(),
+                    fuelTankList.size()
+            );
+            System.out.printf("\u26FD Fuel monitoring finished at: %s. Processing %d fuel stations.%n",
+                    LocalDateTime.now().format(formatter),
+                    stations.size()
+            );
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.printf("\u26FD Fuel monitoring failed at: %s. Error: %s%n",
+                    LocalDateTime.now().format(formatter),
+                    e.getMessage()
+            );
         }
     }
 

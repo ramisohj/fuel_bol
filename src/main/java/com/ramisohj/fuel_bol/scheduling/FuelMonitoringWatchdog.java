@@ -4,6 +4,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @Component
@@ -19,18 +20,19 @@ public class FuelMonitoringWatchdog {
     public void checkAndRestartMonitoring() {
         LocalDateTime lastRun = scheduler.getLastExecutionTime();
         LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         if (lastRun.isBefore(now.minusMinutes(15))) { // If last execution was more than 15 minutes ago
             System.err.println("⚠️ Fuel monitoring task seems stuck! Restarting...");
             try {
                 scheduler.monitorFuelStations(); // Manually restart the task
-                System.out.println("✅ Fuel monitoring task restarted at " + LocalDateTime.now());
+                System.out.println("✅ Fuel monitoring task restarted at " + LocalDateTime.now().format(formatter));
             } catch (Exception e) {
                 System.err.println("❌ Failed to restart fuel monitoring task: " + e.getMessage());
                 e.printStackTrace();
             }
         } else {
-            System.out.println("✅ Fuel monitoring task is running fine at: " + LocalDateTime.now());
+            System.out.println("✅ Fuel monitoring task is running fine at: " + LocalDateTime.now().format(formatter));
         }
     }
 }
