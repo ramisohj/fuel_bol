@@ -1,28 +1,20 @@
 package com.ramisohj.fuel_bol.scheduling;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ramisohj.fuel_bol.model.FuelCode;
 import com.ramisohj.fuel_bol.model.FuelMonitoring;
 import com.ramisohj.fuel_bol.model.FuelStation;
 import com.ramisohj.fuel_bol.model.FuelTank;
-import com.ramisohj.fuel_bol.model.FuelTankDTO;
 import com.ramisohj.fuel_bol.repository.FuelStationRepository;
 import com.ramisohj.fuel_bol.service.FuelLevelService;
 import com.ramisohj.fuel_bol.service.FuelMonitoringService;
 import com.ramisohj.fuel_bol.service.FuelTankService;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -47,36 +39,28 @@ public class FuelMonitoringScheduler {
         this.restTemplate = new RestTemplate();
     }
 
-    @Scheduled(cron = "0 0/10 * * * *") // Runs every 10 minutes
+    //@Scheduled(cron = "0 0/10 * * * *") // Runs every 10 minutes
+    @Scheduled(cron = "0 0/10 * * * *")
     @Transactional
     public void monitorFuelStations() {
+        LocalDateTime start = LocalDateTime.now();
+        lastExecutionTime.set(start);
+
         try {
-            lastExecutionTime.set(LocalDateTime.now());
+            List<FuelStation> stations = fuelStationRepository.findAll();
+            FuelMonitoring monitoring = saveMonitoring();;
 
-            List<FuelStation> fuelStations = fuelStationRepository.findAll();
-            FuelMonitoring fuelMonitoring = saveMonitoring();
-            List<FuelTank> allFuelTanks = new ArrayList<>();
+            List<FuelTank> tanks = fuelTankService.fetchFuelDataParallel(stations, monitoring, apiFuelStation);
 
-            for (FuelStation fuelStation : fuelStations) {
-                for (FuelCode fuelCode : FuelCode.values()) {
-                    String fuelStationUrl = "/" + fuelStation.getIdFuelStation() + "/"+fuelCode.ordinal();
-                    String apiUrl = apiFuelStation + fuelStationUrl;
+            fuelTankService.bulkInsert(tanks);
+            fuelLevelService.insertFuelLevels(monitoring.getIdMonitoring());
 
-                    ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
+            System.out.printf("\u26FD Fuel monitoring completed in %d seconds. Processed %d tanks.%n",
+                    Duration.between(start, LocalDateTime.now()).toSeconds(), tanks.size());
 
-                    if (response.getStatusCode().is2xxSuccessful()) {
-                        allFuelTanks.addAll(saveFuelTanks(response.getBody(), fuelMonitoring, fuelCode));
-                    }
-                }
-            }
-
-            // populating fuel_tanks and fuel_levels tables:
-            fuelTankService.bulkInsert(allFuelTanks);
-            fuelLevelService.insertFuelLevels(fuelMonitoring.getIdMonitoring());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     @Transactional
@@ -85,53 +69,6 @@ public class FuelMonitoringScheduler {
         fuelMonitoring.setMonitoringAt(LocalDateTime.now());
         fuelMonitoring.setCreatedAt(LocalDateTime.now());
         return fuelMonitoringService.insertFuelMonitoring(fuelMonitoring);
-    }
-
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    protected List<FuelTank> saveFuelTanks(String jsonResponse, FuelMonitoring fuelMonitoring, FuelCode fuelCode) {
-
-        List<FuelTank> fuelTanks = new ArrayList<>();
-        try {
-            JSONObject jsonObject = new JSONObject(jsonResponse);
-
-            if (jsonObject.has("oResultado") && !jsonObject.isNull("oResultado")) {
-                JSONArray jsonArray = jsonObject.getJSONArray("oResultado");
-
-                if (!jsonArray.isEmpty()) {
-
-                    List<FuelTankDTO> dtoList = objectMapper.readValue(
-                            jsonArray.toString(),
-                            new TypeReference<List<FuelTankDTO>>() {}
-                    );
-
-                    LocalDateTime now = LocalDateTime.now();
-                    List<FuelTank> fuelTankList = dtoList.stream().map(dto -> {
-                        FuelTank fuelTank = new FuelTank();
-
-                        fuelTank.setIdMonitoring(fuelMonitoring.getIdMonitoring());
-                        fuelTank.setIdFuelStation(dto.getIdFuelStation());
-                        fuelTank.setIdEntity(dto.getIdEntity());
-                        fuelTank.setIdProductBsa(dto.getIdProductBsa());
-                        fuelTank.setIdProductHydro(dto.getIdProductHydro());
-
-                        fuelTank.setFuelType(fuelCode.toString());
-                        fuelTank.setLevelBsa(dto.getLevelBsa());
-                        fuelTank.setLevelOctane(dto.getLevelOctane());
-                        fuelTank.setLevelPlant(dto.getLevelPlant());
-                        fuelTank.setCreatedAt(now);
-
-                        return fuelTank;
-                    }).toList();
-
-                    fuelTanks.addAll(fuelTankList);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return fuelTanks;
     }
 
     public LocalDateTime getLastExecutionTime() {
