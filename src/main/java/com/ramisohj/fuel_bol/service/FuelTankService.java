@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 
@@ -136,11 +137,13 @@ public class FuelTankService {
         return allTanks;
     }
 
-    private final ExecutorService executor = Executors.newFixedThreadPool(10);
+    private final ExecutorService executor = Executors.newFixedThreadPool(20);
     private final int batchSize = 20;
     private final long delayBetweenBatchesMs = 100;
     public List<FuelTank> fetchFuelDataBatched(List<FuelStation> stations, FuelMonitoring monitoring, String apiFuelStation) {
+
         List<FuelTank> allTanks = new ArrayList<>();
+        AtomicInteger failFetchNumber = new AtomicInteger();
 
         for (int i = 0; i < stations.size(); i += batchSize) {
             List<FuelStation> batch = stations.subList(i, Math.min(i + batchSize, stations.size()));
@@ -164,6 +167,7 @@ public class FuelTankService {
                                             fuelCode,
                                             e.getMessage()
                                     );
+                                    failFetchNumber.getAndIncrement();
                                 }
                                 return Collections.<FuelTank>emptyList();
                             }, executor)) // << use custom executor
@@ -180,6 +184,9 @@ public class FuelTankService {
                 Thread.sleep(delayBetweenBatchesMs); // Pause between batches
             } catch (InterruptedException ignored) {}
         }
+
+        System.out.printf("Number of failed API: %d calls.%n", failFetchNumber.get());
+
         return allTanks;
     }
 
