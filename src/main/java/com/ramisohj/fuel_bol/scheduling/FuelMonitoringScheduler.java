@@ -54,7 +54,7 @@ public class FuelMonitoringScheduler {
             );
 
             // TODO: if fuelTankList is empty, DO NOT SAVE THE ANY RECORD ON: fuel_monitoring, fuel_tanks, fuel_levels tables
-            List<FuelTank> fuelTankList = fuelTankService.fetchFuelDataSequential(stations, monitoring, apiFuelStation);
+            List<FuelTank> fuelTankList = fuelTankService.fetchFuelDataBatched(stations, monitoring, apiFuelStation);
             fuelTankService.bulkInsert(fuelTankList);
             fuelLevelService.insertFuelLevels(monitoring.getIdMonitoring());
 

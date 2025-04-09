@@ -33,6 +33,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 
@@ -43,7 +45,8 @@ public class FuelTankService {
     @Autowired
     private RestTemplate restTemplate;
     @Autowired
-    private ObjectMapper objectMapper; // Jackson for parsing JSON
+    private ObjectMapper objectMapper;
+
 
     public FuelTankService(DataSource dataSource) {
         this.dataSource = dataSource;
@@ -129,6 +132,53 @@ public class FuelTankService {
                     );
                 }
             }
+        }
+        return allTanks;
+    }
+
+    private final ExecutorService executor = Executors.newFixedThreadPool(5);
+    private final int batchSize = 5;
+    private final long delayBetweenBatchesMs = 100;
+    public List<FuelTank> fetchFuelDataBatched(List<FuelStation> stations, FuelMonitoring monitoring, String apiFuelStation) {
+        List<FuelTank> allTanks = new ArrayList<>();
+
+        for (int i = 0; i < stations.size(); i += batchSize) {
+            List<FuelStation> batch = stations.subList(i, Math.min(i + batchSize, stations.size()));
+
+            List<CompletableFuture<List<FuelTank>>> futures = batch.stream()
+                    .flatMap(station -> Arrays.stream(FuelCode.values())
+                            .map(fuelCode -> CompletableFuture.supplyAsync(() -> {
+                                try {
+                                    String url = apiFuelStation + "/" + station.getIdFuelStation() + "/" + fuelCode.ordinal();
+                                    System.out.printf("Monitoring API: %s%n",
+                                            url
+                                    );
+                                    ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+
+                                    if (response.getStatusCode().is2xxSuccessful()) {
+                                        return saveFuelTanks(response.getBody(), monitoring, fuelCode);
+                                    }
+                                } catch (Exception e) {
+                                    System.out.printf("Failed API: station=%d code=%s - %s%n",
+                                            station.getIdFuelStation(),
+                                            fuelCode,
+                                            e.getMessage()
+                                    );
+                                }
+                                return Collections.<FuelTank>emptyList();
+                            }, executor)) // << use custom executor
+                    )
+                    .toList();
+            for (CompletableFuture<List<FuelTank>> future : futures) {
+                try {
+                    allTanks.addAll(future.get());
+                } catch (Exception e) {
+                    System.out.printf("Error joining future: %s%n", e.getMessage());
+                }
+            }
+            try {
+                Thread.sleep(delayBetweenBatchesMs); // Pause between batches
+            } catch (InterruptedException ignored) {}
         }
         return allTanks;
     }
