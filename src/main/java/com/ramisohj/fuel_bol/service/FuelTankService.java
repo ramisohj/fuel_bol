@@ -136,8 +136,8 @@ public class FuelTankService {
         return allTanks;
     }
 
-    private final ExecutorService executor = Executors.newFixedThreadPool(5);
-    private final int batchSize = 5;
+    private final ExecutorService executor = Executors.newFixedThreadPool(10);
+    private final int batchSize = 10;
     private final long delayBetweenBatchesMs = 100;
     public List<FuelTank> fetchFuelDataBatched(List<FuelStation> stations, FuelMonitoring monitoring, String apiFuelStation) {
         List<FuelTank> allTanks = new ArrayList<>();
