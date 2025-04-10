@@ -4,13 +4,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Column;
 import jakarta.persistence.GenerationType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 
 
@@ -21,6 +22,7 @@ import java.time.format.DateTimeFormatter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FuelTank {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idFuelTank;
@@ -35,7 +37,8 @@ public class FuelTank {
     private double levelOctane;
     private double levelPlant;
 
-    private LocalDateTime createdAt;
+    @Column(columnDefinition = "TIMESTAMPTZ")
+    private OffsetDateTime createdAt;
 
     // Convert this FuelTank object to a CSV string suitable for COPY
     public String toCsv() {
@@ -49,7 +52,7 @@ public class FuelTank {
                 String.valueOf(levelBsa),
                 String.valueOf(levelOctane),
                 String.valueOf(levelPlant),
-                createdAt != null ? createdAt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) : ""
+                createdAt != null ? createdAt.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME) : ""
         );
     }
 }

@@ -27,7 +27,8 @@ import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -204,7 +205,8 @@ public class FuelTankService {
                             new TypeReference<List<FuelTankDTO>>() {}
                     );
 
-                    LocalDateTime now = LocalDateTime.now();
+                    OffsetDateTime nowInBolivia = OffsetDateTime.now(ZoneId.of("America/La_Paz"));
+
                     List<FuelTank> fuelTankList = dtoList.stream().map(dto -> {
                         FuelTank fuelTank = new FuelTank();
 
@@ -218,7 +220,7 @@ public class FuelTankService {
                         fuelTank.setLevelBsa(dto.getLevelBsa());
                         fuelTank.setLevelOctane(dto.getLevelOctane());
                         fuelTank.setLevelPlant(dto.getLevelPlant());
-                        fuelTank.setCreatedAt(now);
+                        fuelTank.setCreatedAt(nowInBolivia);
 
                         return fuelTank;
                     }).toList();
