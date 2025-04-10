@@ -11,7 +11,7 @@ import lombok.Setter;
 import lombok.experimental.FieldNameConstants;
 import org.locationtech.jts.geom.Point;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -29,10 +29,8 @@ public class FuelStation {
     private Long idDepartment;
     private String fuelStationName;
     private String direction;
-
     @Column(columnDefinition = "geometry(Point, 4326)")
     private Point location;
 
-    @Column(columnDefinition = "TIMESTAMPTZ")
-    private OffsetDateTime createdAt;
+    private LocalDateTime createdAt;
 }
