@@ -153,7 +153,9 @@ public class FuelTankService {
                             .map(fuelCode -> CompletableFuture.supplyAsync(() -> {
                                 try {
                                     String url = apiFuelStation + "/" + station.getIdFuelStation() + "/" + fuelCode.ordinal();
-                                    System.out.printf("Monitoring API: %s%n", url);
+                                    System.out.printf("Monitoring API: %s%n",
+                                            url
+                                    );
                                     ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 
                                     if (response.getStatusCode().is2xxSuccessful()) {
@@ -183,7 +185,7 @@ public class FuelTankService {
             } catch (InterruptedException ignored) {}
         }
 
-        System.out.printf("Number of failed APIs: %d%n", failFetchNumber.get());
+        System.out.printf("Number of failed API: %d calls.%n", failFetchNumber.get());
 
         return allTanks;
     }
