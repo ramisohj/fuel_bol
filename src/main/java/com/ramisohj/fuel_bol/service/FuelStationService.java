@@ -21,6 +21,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -117,7 +119,7 @@ public class FuelStationService {
                                         obj.get("nombreEstacion").toString(),
                                         obj.get("direccion").toString(),
                                         location,
-                                        LocalDateTime.now()
+                                        OffsetDateTime.now(ZoneId.of("America/La_Paz"))
                                 );
                             } catch (Exception e) {
                                 System.out.println("Error processing object: " + obj + ", date: " + LocalDateTime.now());
