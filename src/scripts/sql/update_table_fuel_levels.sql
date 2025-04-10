@@ -1,5 +1,0 @@
---- LIST OF RECORDS FOR MONITORING DATA (ONLY FOR CBBA)
-
-ALTER TABLE fuel_levels
-ALTER COLUMN monitoring_at TYPE TIMESTAMPTZ USING monitoring_at AT TIME ZONE 'America/La_Paz',
-ALTER COLUMN created_at TYPE TIMESTAMPTZ USING created_at AT TIME ZONE 'America/La_Paz';

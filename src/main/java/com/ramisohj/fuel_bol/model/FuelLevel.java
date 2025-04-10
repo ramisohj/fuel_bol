@@ -4,14 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Column;
 import jakarta.persistence.GenerationType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -27,14 +26,11 @@ public class FuelLevel {
     private Long idMonitoring;
     private Long idFuelStation;
 
-    @Column(columnDefinition = "TIMESTAMPTZ")
-    private OffsetDateTime monitoringAt;
-
+    private LocalDateTime monitoringAt;
     private String fuelType;
     private double levelBsa;
     private double levelOctane;
     private double levelPlant;
 
-    @Column(columnDefinition = "TIMESTAMPTZ")
-    private OffsetDateTime createdAt;
+    private LocalDateTime createdAt;
 }
