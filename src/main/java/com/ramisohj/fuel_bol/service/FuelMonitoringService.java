@@ -35,8 +35,8 @@ public class FuelMonitoringService {
 
         jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setTimestamp(1, Timestamp.valueOf(monitoring.getMonitoringAt()));
-            ps.setTimestamp(2, Timestamp.valueOf(monitoring.getCreatedAt()));
+            ps.setTimestamp(1, Timestamp.from(monitoring.getMonitoringAt().toInstant()));
+            ps.setTimestamp(2, Timestamp.from(monitoring.getCreatedAt().toInstant()));
             return ps;
         }, keyHolder);
 

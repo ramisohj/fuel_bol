@@ -1,12 +1,17 @@
 package com.ramisohj.fuel_bol.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 
 @Entity
@@ -16,9 +21,14 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FuelMonitoring {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMonitoring;
-    private LocalDateTime monitoringAt;
-    private LocalDateTime createdAt;
+
+    @Column(columnDefinition = "TIMESTAMPTZ")
+    private OffsetDateTime monitoringAt;
+
+    @Column(columnDefinition = "TIMESTAMPTZ")
+    private OffsetDateTime createdAt;
 }

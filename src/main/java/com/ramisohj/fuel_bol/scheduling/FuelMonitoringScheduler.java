@@ -14,6 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
@@ -77,9 +79,12 @@ public class FuelMonitoringScheduler {
 
     @Transactional
     protected FuelMonitoring saveMonitoring() {
+        OffsetDateTime nowInBolivia = OffsetDateTime.now(ZoneId.of("America/La_Paz"));
+
         FuelMonitoring fuelMonitoring = new FuelMonitoring();
-        fuelMonitoring.setMonitoringAt(LocalDateTime.now());
-        fuelMonitoring.setCreatedAt(LocalDateTime.now());
+        fuelMonitoring.setMonitoringAt(nowInBolivia);
+        fuelMonitoring.setCreatedAt(nowInBolivia);
+
         return fuelMonitoringService.insertFuelMonitoring(fuelMonitoring);
     }
 
